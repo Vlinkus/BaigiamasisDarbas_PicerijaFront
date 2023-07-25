@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,101 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.test {
+  background-color: #bbb;
+  height: 500px;
+  width: 500px;
+}
+
+/* @media screen and (min-width: 1280px) {
+  .top_mobile_header {
+      display: none !important;
+  }
+  .content_body {
+    padding-top: 0px !important;
+  }
+} */
+
+@media screen and (max-width: 1280px) {
+
+}
+
+.content_body {
+  padding-top: 70px;
+}
+
+.top_mobile_header {
+  color:white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  z-index: 7;
+  margin: 0;
+  top: 0;
+
+  padding-left: 24px;
+  padding-right: 18px;
+  padding-bottom: 10px;
+
+  height: 60px;
+  width: 100%;
+
+  box-shadow: 0 1px 2px rgba(0,0,0,.16);
+
+  display: block;
+  position: fixed;
+  background-repeat: no-repeat;
+  background-color: rgb(185, 29, 9);
+}
+
+.top_mobile_header, 
+label {
+  font-size: 48px;
+  display: inline-block;
+}
+
+.bottom_footer {
+  color: white;
+  background-image: url(./pic/bg1.svg);
+  height: 200px;
+  width: 100%;
+}
+
+.login_icon {
+  float: right;
+  display: inline-block;
+  background-image: url(./pic/sign-in-alt.svg);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+  padding: 0;
+}
+.cart_icon {
+  float: right;
+  display: inline-block;
+  background-image: url(./pic/shopping-bag.svg);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+  padding: 0;
+}
+.help_icon {
+  float: right;
+  display: inline-block;
+  background-image: url(./pic/seal-question.svg);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+  padding: 0;
 }
