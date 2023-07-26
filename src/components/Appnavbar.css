@@ -1,0 +1,15 @@
+/* Custom styles for the light-colored navigation bar */
+.container-fluid {
+    align-content: end;
+    background-image: url('./Images/pizzeriasm.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    width: 100%;
+    height: auto;
+  }
+  
+  .navbar.navbar-expand-sm.bg-dark.navbar-dark {
+    height: 180px !important;
+    background-color: #FF9201 ;
+  }
