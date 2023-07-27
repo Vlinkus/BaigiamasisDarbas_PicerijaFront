@@ -1,68 +1,34 @@
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, Nav, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+import { NavbarProps } from 'reactstrap';
+import Container from 'react';
 import {Link} from 'react-router-dom';
 import './Appnavbar.css';
+import pizzeria from './Images/pizzeria.jpg';
 
 
 function AppNavbar(){
         return (
-            <div className='wrapper'>
+            <div className="col-8 nav-img">
+               <img id="navPizza" src={pizzeria} alt="pizzeria" />
                 <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
                     <div className="container-fluid">
-                        <p>Logo</p>
+                        <a className="navbar-brand" href="/">Logo</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="collapsibleNavbar">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <NavLink tag={Link} to="/">
-                                        Pradžia
-                                    </NavLink>
+                                    <a className="nav-link" href="/">Pradžia</a>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink tag={Link} to="/picos">
-                                        Picos
-                                    </NavLink>
+                                    <a className="nav-link" href="/picos">Picos</a>
                                 </li>
                             </ul>
-                            <img className="myimage" src='/Images/pizzeria.jpg' alt="pizzeria" />
                         </div>
                     </div>
-                </nav>
-                {/* <Navbar color="light" light expand="md" className="custom-navbar">
-           
-                <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <NavLink tag={Link} to="/about">
-                       Apie mus
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to="/contacts">
-                       Susisiekite
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to="/where">
-                       Mus Rasite
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to="/login">
-                       login
-                    </NavLink>
-                  </NavItem>
-                </Nav>
-              </Navbar>
-              <Navbar color="dark" dark expand="md" className="custom-navbar">
-                <NavbarBrand tag={Link} to="/">
-                     Pizzeria
-                </NavbarBrand>
-                <NavbarBrand tag={Link} to="/pizza">
-                  Picos
-                </NavbarBrand> 
-                 </Navbar> */}
-            </div>
+                </nav> 
+             </div>
           );
 }
 export default AppNavbar;

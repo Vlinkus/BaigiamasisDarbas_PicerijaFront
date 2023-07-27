@@ -1,7 +1,6 @@
 /* Custom styles for the light-colored navigation bar */
 .container-fluid {
     align-content: end;
-    background-image: url('./Images/pizzeriasm.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto 100%;
@@ -9,7 +8,27 @@
     height: auto;
   }
   
-  .navbar.navbar-expand-sm.bg-dark.navbar-dark {
-    height: 180px !important;
+  /* .container {
+    margin: 0;
+    padding: 0;
     background-color: #FF9201 ;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    
+    align-content: end;
+  } */
+.col-8.nav-img{
+    background-color: #FF9201 ;
+    width: 100%;
+    height: 100%;
+  }
+
+  #navPizza{
+    max-width: 700px;
+    width:100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+  margin-right: auto;
   }
