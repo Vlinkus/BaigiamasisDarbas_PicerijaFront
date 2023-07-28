@@ -13,7 +13,12 @@ code {
 }
 
 #root {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container-manager{
+  margin: 0px;
+  padding: 0px;
 }
  */
