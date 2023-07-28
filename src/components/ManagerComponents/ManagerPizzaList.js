@@ -40,10 +40,14 @@ function ManagerPizzaList() {
       setShowModal(false);
     };
 
+    const base64ToImageUrl = (base64String) => {
+        return `data:image/*;base64,${base64String}`;
+      };
+
     return (
         <>
             <h3>Picos</h3>
-                <table class="table table-hover table-striped">
+                <table className="table table-hover table-striped">
                     <thead>
                         <tr>
                             <th scope="col">El.Nr.</th>
@@ -63,18 +67,19 @@ function ManagerPizzaList() {
                             <th scope="row">{index}</th>
                             <td>{pizza.pizzaName}</td>
                             <td>
-                                <img src={`data:image/*;base64,${pizza.pizzaPhoto}`}
-                                    alt={pizza.pizzaName} />
+                              {pizza.pizzaPhoto && (
+                                        <img src={base64ToImageUrl(pizza.pizzaPhoto)} alt={pizza.pizzaName} />
+                                    )}
                             </td>
                             <td>{pizza.pizzaPrice} €</td>
                             <td>{pizza.pizzaSize}</td>
                             <td>{pizza.products.map((product) => (<p>{product.productName}</p>))}</td>
                             <td>
-                                <button type="button" class="btn btn-warning" onclick={()=>handleUpdate(pizza.id)}>
+                                <button type="button" className="btn btn-warning" onclick={()=>handleUpdate(pizza.id)}>
                                     Update
                                 </button>
-                                 <SimpleModal showModal={showModal} closeModal={closeModal} />
-                                <button type="button" class="btn btn-danger" onClick={() => handleDelete(pizza.id)}>
+                                 {/* <SimpleModal showModal={showModal} closeModal={closeModal} /> */}
+                                <button type="button" className="btn btn-danger" onClick={() => handleDelete(pizza.id)}>
                                     Delete
                                 </button>
                             </td>
