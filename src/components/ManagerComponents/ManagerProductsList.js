@@ -13,6 +13,25 @@ function ManagerProductsList(){
           console.error("Klaida gavus produktų duomenis:", error);
         });
     }, []);
+
+    const handleDelete = (productIdToDelete) => {
+        axios
+          .delete(`/api/product/${productIdToDelete}`)
+          .then((response) => {
+            // Ištrynus perkrauna sąrašą iš kart
+            axios.get("/api/products").then((response) => {
+              setProduct(response.data);
+            });
+          })
+          .catch((error) => {
+            console.error("Klaida ištrinant pproductą:" +{productIdToDelete}, error);
+          });
+      };
+
+      const handleUpdate = (productIdToUpdate) =>{
+
+      };
+
     return(
         <>
             <h2>Produktų sąrašas</h2>
@@ -36,8 +55,12 @@ function ManagerProductsList(){
                             <td>{product.productPrice} €</td>
                             <td>{product.pizza}</td>
                             <td>
-                                <button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-warning"onClick={() => handleUpdate(product.id)}>
+                                    Update
+                                </button>
+                                <button type="button" class="btn btn-danger" onClick={() => handleDelete(product.id)}>
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}

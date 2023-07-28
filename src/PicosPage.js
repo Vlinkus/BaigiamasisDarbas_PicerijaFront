@@ -24,9 +24,9 @@ function PicosPage() {
         {pizzas.map((pizza) => (
           <div key={pizza.id} className="pizza-item">
             <img
-              src={`data:image/jpeg;base64,${pizza.pizzaPhoto}`}
+              src={`data:image/jpeg;base64,arrayBufferToBase64(${pizza.pizzaPhoto})`}
               alt={pizza.pizzaName}
-            />
+            />a
             <h2>{pizza.pizzaName}</h2>
             <p>Kaina: {pizza.pizzaPrice} €</p>
             <p>Dydis: {pizza.pizzaSize}</p>

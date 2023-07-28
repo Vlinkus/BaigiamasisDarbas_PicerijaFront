@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Modal, Button } from "reactstrap";
+import SimpleModal from "./SimpleModal";
+
 
 function ManagerPizzaList() {
     const [pizzas, setPizzas] = useState([]);
+    const [showModal, setShowModal] = useState(false);
     useEffect(() => {
       axios
         .get("/api/pizza")
@@ -13,6 +17,28 @@ function ManagerPizzaList() {
           console.error("Klaida gavus picų duomenis:", error);
         });
     }, []);
+    
+    const handleDelete = (pizzaIdToDelete) => {
+        axios
+          .delete(`/api/pizza/${pizzaIdToDelete}`)
+          .then((response) => {
+            // Ištrynus perkrauna sąrašą iš kart
+            axios.get("/api/pizza").then((response) => {
+              setPizzas(response.data);
+            });
+          })
+          .catch((error) => {
+            console.error("Klaida ištrynant picą:" +{pizzaIdToDelete}, error);
+          });
+      };
+
+      const handleUpdate = (pizzaIdToUpdate) =>{
+        setShowModal(true);
+    };
+  
+    const closeModal = () => {
+      setShowModal(false);
+    };
 
     return (
         <>
@@ -37,15 +63,20 @@ function ManagerPizzaList() {
                             <th scope="row">{index}</th>
                             <td>{pizza.pizzaName}</td>
                             <td>
-                                <img src={`data:image/jpeg;base64,${pizza.pizzaPhoto}`}
+                                <img src={`data:image/*;base64,${pizza.pizzaPhoto}`}
                                     alt={pizza.pizzaName} />
                             </td>
                             <td>{pizza.pizzaPrice} €</td>
                             <td>{pizza.pizzaSize}</td>
-                            <td>{pizza.products}</td>
+                            <td>{pizza.products.map((product) => (<p>{product.productName}</p>))}</td>
                             <td>
-                                <button type="button" class="btn btn-warning">Update</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-warning" onclick={()=>handleUpdate(pizza.id)}>
+                                    Update
+                                </button>
+                                 <SimpleModal showModal={showModal} closeModal={closeModal} />
+                                <button type="button" class="btn btn-danger" onClick={() => handleDelete(pizza.id)}>
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}
