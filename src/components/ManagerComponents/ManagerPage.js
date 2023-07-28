@@ -1,6 +1,5 @@
 import ManagerNavBar from "./ManagerNavBar";
 
-
 function ManagerPage(){
 return (
     <div>

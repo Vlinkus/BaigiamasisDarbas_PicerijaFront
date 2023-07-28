@@ -2,7 +2,7 @@ import "./PicosPage.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function PicosPage() {
+export default function PicosPage() {
   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
@@ -43,5 +43,3 @@ function PicosPage() {
     </div>
   );
 }
-
-export default PicosPage;
