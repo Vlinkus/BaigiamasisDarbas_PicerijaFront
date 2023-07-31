@@ -6,7 +6,7 @@ import './Appnavbar.css';
 import pizzeria from './Images/pizzeria.jpg';
 
 
-export default function AppNavbar(){
+export default function Header(){
     return (
         <>
             <div className="col-8 nav-img">
