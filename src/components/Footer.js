@@ -6,9 +6,9 @@ export default function Footer() {
             <div className="footer">
                 <div className="footer-heading footer-1">
                     <h2>About Us</h2>
-                    <Link to="#">Contacts</Link>
-                    <Link to="#">Demo</Link>
-                    <Link to="#">Customers</Link>
+                    <Link to="/">Contacts</Link>
+                    <Link to="/404">Demo</Link>
+                    <Link to="/picos">Customers</Link>
                     <Link to="#">Investors</Link>
                     <Link to="#">Terms of Service</Link>
                 </div>
