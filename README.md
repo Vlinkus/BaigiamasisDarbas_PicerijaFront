@@ -4,7 +4,7 @@
 > docker build -t myapp:v1 .
 
 ↓ ↓ ↓ ↓ Paleisti naują konteinerį (with volume!)
-> docker run --name myapp_c_nodemon -p 4000:4000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
+> docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
 
 # Getting Started with Create React App
 
