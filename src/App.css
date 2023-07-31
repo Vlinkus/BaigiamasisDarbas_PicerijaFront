@@ -42,74 +42,111 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-  height: 100%;
+html, body, #root {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
-
-.test {
+.p_test {
   background-color: #bbb;
   height: 500px;
   width: 500px;
 } 
 
-.wrapper {
-  height: 100%;
+.p_wrapper {
+  margin-bottom:auto;
   display: flex;
-  align-self: stretch;
 }
 
-.content {
-  /* min-height: 50vh; */
-  /* flex-wrap: nowrap; */
+.p_content {
   max-width: 90vw;
   margin: auto;
   margin-top: 1rem;
-  /* flex: 1; */
 }
-.navbar_wrapper {
+.p_navbar_wrapper {
+  justify-content: space-between;
+  background-color: #333;
+}
+.p_navbar_ {
+  max-width: 90vw;
+  margin: auto;
+  display: flex;
+  height: 3.5em;
+  justify-content: space-between;
+}
+.p_nav-logo {
+  cursor: pointer;
+}
+.p_nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.33em;
+  height: 3.5em;
+  cursor: pointer;
+}
+.p_left-items>a , .p_right-items>a {
+  color: #fff;
+  text-decoration: none;
+}
+.p_left-items {
+  display: flex;
+}
+.p_right-items {
+  display: flex;
+}
+.p_nav-item:hover {
+  background-color: #555;
+}
+.p_nav-item.active {
+  background-color: #888;
+}
+/* .p_navbar_wrapper {
   justify-content: space-between;
   background-color: #333;
   height: 3.5em;
+  margin: 0 ;
+  padding:0 ;
 }
-.navbar {
+.p_navbar_ {
   max-width: 90vw;
   margin: 0 auto;
   padding:0;
 }
-.nav-logo {
+.p_nav-logo {
   cursor: pointer;
 }
-.nav-item {
+.p_nav-item {
   padding: 1em 1em;
   cursor: pointer;
 }
-.left-items > a, .right-items > a {
+.p_left-items > a, .p_right-items > a {
   color: #fff;
   text-decoration: none;
-  height: 3em;
+  
 }
-.left-items {
+.p_left-items {
   display: flex;
 }
-.right-items {
+.p_right-items {
   display: flex;
 }
-.nav-item:hover {
+.p_nav-item:hover {
   background-color: #555;
 }
-.nav-item.active {
+.p_nav-item.active {
   background-color: #888;
-}
-.footer-wrapper {
+} */
+.p_footer-wrapper {
   background-image: url(./pic/bg1.svg);
   padding: 4rem 0 4rem 0;
   bottom: 0;
   position: relative;
   width: 100%;
 }
-.footer {
+.p_footer {
   /* min-height: 20em; */
   display: flex;
   color: white;
@@ -117,24 +154,24 @@ html, body {
   flex-wrap: wrap;
   margin: 0 auto;
 }
-.footer-heading {
+.p_footer-heading {
   display: flex;
   flex-flow: column wrap;
   margin-right: 4vw;
 }
-.footer-heading h2 {
+.p_footer-heading h2 {
   margin-bottom: 2rem;
 }
-.footer-heading a {
+.p_footer-heading a {
   color: white;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
-.footer-heading a:hover {
+.p_footer-heading a:hover {
   color:orange;
   transition: 0.15s ease-out;
 }
-.footer-email-form h2 {
+.p_footer-email-form h2 {
   margin-bottom: 2rem;
 }
 #footer-email {

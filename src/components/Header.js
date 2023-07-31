@@ -8,29 +8,29 @@ import pizzeria from "./Images/pizzeria.jpg"
 export default function Header() {
     return (
         <>
-            <nav class="navbar_wrapper">
-                <div class="navbar">
-                    <section class="left-items">
+            <div class="p_navbar_wrapper">
+                <div class="p_navbar_">
+                    <section class="p_left-items">
                         <Link to="/">
                             <img src={pizzeria} style={{height:"3.5em"}}/>
                         </Link>
                         <Link to="/picos">
-                            <div class="nav-item">Picos</div>
+                            <div class="p_nav-item">Picos</div>
                         </Link>
                         <Link to="/404">
-                            <div class="nav-item">Kontaktai</div>
+                            <div class="p_nav-item">Kontaktai</div>
                         </Link>
                     </section>
-                    <section class="right-items">
+                    <section class="p_right-items">
                         <Link to="/login">
-                            <div class="nav-item">Prisijungti</div>
+                            <div class="p_nav-item">Prisijungti</div>
                         </Link>
                         <Link to="/register">
-                            <div class="nav-item">Registruotis</div>
+                            <div class="p_nav-item">Registruotis</div>
                         </Link>
                     </section>
                 </div>
-            </nav>
+            </div>
         </>
     )
 }

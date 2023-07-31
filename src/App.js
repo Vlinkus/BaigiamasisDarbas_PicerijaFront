@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className="wrapper">
-        <div className="content">
+      <div className="p_wrapper">
+        <div className="p_content">
           <Switch>
             <Route path="/" exact component={ExampleComponent} />
             <Route path="/login" exact component={LoginPage} />
