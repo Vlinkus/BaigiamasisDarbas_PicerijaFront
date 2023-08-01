@@ -1,30 +1,32 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
     return (
-        <footer className="footer-container">
-            <div className="footer">
-                <div className="footer-heading footer-1">
+        <footer className="p_footer-wrapper">
+            <div className="p_footer">
+                <div className="p_footer-heading footer-1">
                     <h2>About Us</h2>
-                    <a href="#">Contacts</a>
-                    <a href="#">Demo</a>
-                    <a href="#">Customers</a>
-                    <a href="#">Investors</a>
-                    <a href="#">Terms of Service</a>
+                    <Link to="/">Contacts</Link>
+                    <Link to="/404">Demo</Link>
+                    <Link to="/picos">Customers</Link>
+                    <Link to="#">Investors</Link>
+                    <Link to="#">Terms of Service</Link>
                 </div>
-                <div className="footer-heading footer-2">
+                <div className="p_footer-heading footer-2">
                     <h2>Contact Us</h2>
-                    <a href="#">Jobs</a>
-                    <a href="#">Support</a>
-                    <a href="#">Sponsorships</a>
+                    <Link to="#">Jobs</Link>
+                    <Link to="#">Support</Link>
+                    <Link to="#">Sponsorships</Link>
                 </div>
-                <div className="footer-heading footer-3">
+                <div className="p_footer-heading footer-3">
                     <h2>Social media</h2>
-                    <a href="#">facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Youtube</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
+                    <Link to="#">facebook</Link>
+                    <Link to="#">Instagram</Link>
+                    <Link to="#">Youtube</Link>
+                    <Link to="#">Twitter</Link>
+                    <Link to="#">GitHub</Link>
                 </div>
-                <div className="footer-email-form">
+                <div className="p_footer-email-form">
                     <h2>Join our newsletter</h2>
                     <input type="email" placeholder="Enter an email address" id="footer-email"/>
                     <input type="submit" value="Sign up" id="footer-email-btn" />

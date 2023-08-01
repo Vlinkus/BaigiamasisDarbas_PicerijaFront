@@ -2,17 +2,20 @@ import "./PicosPage.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function PicosPage() {
+export default function PicosPage() {
   const [pizzas, setPizzas] = useState([]);
+  const [isPending, setPending] = useState(true);
 
   useEffect(() => {
     axios
       .get("/api/pizza")
       .then((response) => {
         setPizzas(response.data);
+        setPending(false);
       })
       .catch((error) => {
         console.error("Klaida gavus picų duomenis:", error);
+        setPending(false);
       });
   }, []);
 
@@ -22,6 +25,7 @@ function PicosPage() {
 
   return (
     <div className="pizzas-container">
+      { isPending && <div>Loading...</div>}
       <h1>Picos puslapis</h1>
       <div className="pizzas-list">
         {pizzas.map((pizza) => (
@@ -43,5 +47,3 @@ function PicosPage() {
     </div>
   );
 }
-
-export default PicosPage;

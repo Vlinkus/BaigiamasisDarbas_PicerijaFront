@@ -1,3 +1,11 @@
+## Kaip paleisti projektą su docker?
+
+↓ ↓ ↓ Sukurti image (-t for tag) ↓ ↓ ↓
+> docker build -t myapp:v1 .
+
+↓ ↓ ↓ ↓ Paleisti naują konteinerį (with volume!)
+> docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
