@@ -1,4 +1,3 @@
-//import background from './pic/bg1.svg';
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
@@ -10,6 +9,8 @@ import RegisterPage from "./components/RegisterPage";
 import ExampleComponent from "./components/ExampleComponent";
 import PicosPage from "./PicosPage";
 import "./PicosPage.css";
+import ManagerPage from "./components/ManagerComponents/ManagerPage";
+
 
 function App() {
   return (
@@ -23,8 +24,10 @@ function App() {
             <Route path="/register" exact component={RegisterPage} />
             <Route path="/picos" exact component={PicosPage} />
             {/* <Route path="/pica/:id" exact component={PicoPage} /> */}
-            <Route path="/*" exact component={NotFound} />
-          </Switch>
+            <Route path="/manage/v1" exact component={ManagerPage} />
+          <Route path="/*" exact component={NotFound} />
+            
+        </Switch>
         </div>
       </div>
       <Footer />
