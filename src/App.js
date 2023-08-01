@@ -9,6 +9,7 @@ import PicosPage from "./PicosPage";
 import "./PicosPage.css";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
 
+
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/picos" exact component={PicosPage} />
           <Route path="/manage/v1" exact component={ManagerPage} />
           <Route path="/*" exact component={NotFound} />
+          
         </Switch>
       </div>
       <Footer />

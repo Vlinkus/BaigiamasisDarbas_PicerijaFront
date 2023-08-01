@@ -51,14 +51,14 @@ body {
   width: 500px;
 }
 
-/* @media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .top_mobile_header {
       display: none !important;
   }
   .content_body {
     padding-top: 0px !important;
   }
-} */
+}
 
 .main {
   min-height: 40vh;
