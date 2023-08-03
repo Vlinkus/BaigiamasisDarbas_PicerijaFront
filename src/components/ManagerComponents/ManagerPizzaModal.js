@@ -2,17 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Label,
-  Input,
-  Form,
-  FormGroup,
-} from "reactstrap";
+import { Button,Label,Input,Form,FormGroup} from "reactstrap";
 import "./ManagerModal.css";
 
 function ManagerPizzaModal({ showModal, closeModal, pizza }) {

@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import NotFound from "./components/NotFound";
-//import Home from "./components/Home";
 import Footer from "./components/Footer";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
@@ -10,9 +9,11 @@ import ExampleComponent from "./components/ExampleComponent";
 import PicosPage from "./PicosPage";
 import "./PicosPage.css";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
+import { useTranslation } from "react-i18next";
 
 
 function App() {
+  const { t, i18n } = useTranslation();
   return (
     <Router>
       <Header />

@@ -1,6 +1,8 @@
 import "./PicosPage.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
+import './i18n';
 
 export default function PicosPage() {
   const [pizzas, setPizzas] = useState([]);
@@ -54,10 +56,16 @@ export default function PicosPage() {
     }
   };
 
+  const { t, i18n } = useTranslation();
+  const changeLanguageHandler = (e) => {
+      const languageValue = e.target.value
+      i18n.changeLanguage(languageValue);
+    }
+
   return (
     <div className="pizzas-container">
       {isPending && <div>Loading...</div>}
-      <h1>Menu</h1>
+      <h1>{t("Menu")}</h1>
       <div className="pizzas-list">
         {pizzas
           .filter(
@@ -79,12 +87,13 @@ export default function PicosPage() {
               )}
               <div className="pizza-details">
                 <h2>{pizza.pizzaName}</h2>
-                <p>Kaina: {pizza.pizzaPrice} €</p>
-                <p>Dydis: {pizza.pizzaSize} cm</p>
+                <p>{t("Price")}: {pizza.pizzaPrice} €</p>
+                <p>{t("Size")}: {pizza.pizzaSize} cm</p>
                 <p>
-                  Ingridientai:{" "}
+                {t("Ingredients")}:{" "}
                   {pizza.products
-                    .map((product) => product.productName)
+                    .map((product) => t(product.productName))
+                    // .map((product) => product.productName)
                     .join(", ")}
                 </p>
               </div>
@@ -101,7 +110,7 @@ export default function PicosPage() {
         </div>
       ) : (
         <button className="random-button" onClick={chooseRandomPizza}>
-          SUŽINOK DIENOS PICĄ
+          {t("DayPizza")}
         </button>
       )}
     </div>
