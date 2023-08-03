@@ -1,8 +1,16 @@
+import i18n from "../i18n"
+import { useTranslation } from "react-i18next";
+
 export default function NotFound() {
+    const { t, i18n } = useTranslation();
+    const changeLanguageHandler = (e) => {
+        const languageValue = e.target.value
+        i18n.changeLanguage(languageValue);
+      }
     return (
         <>
-        <h1>Ups, toks puslapis dingo</h1>
-        <p>...galite pabandyti grįžti į pagrindinį puslapį</p>
+        <h1>{t('PageLost')}</h1>
+        <p>{t('TryHomePage')}</p>
         </>
     );
 }
