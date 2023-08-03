@@ -75,8 +75,8 @@ function ManagerPizzaList() {
                     <tbody>
                        
                     {pizzas.map((pizza, index) => (
-                        <tr key={index}>
-                            <th scope="row">{pizza.id}</th>
+                        <tr key={pizza.id}>
+                            <th scope="row">{index+1}</th>
                             <td>{pizza.pizzaName}</td>
                             <td>
                               {pizza.pizzaPhoto && (

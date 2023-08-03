@@ -1,7 +1,13 @@
 body {
-  background-image: url("./components/Images/menuBackground.jpg");
+  background-image: url("./components/Images/menuBackground.webp");
+  background-color: rgba(252,203,0,255);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#root{
+  background: rgb(253,29,29);
+  background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgba(255, 0, 0) 20%, rgba(253,187,45,1) 45%, rgb(255, 204, 95) 100%);
 }
 
 button {

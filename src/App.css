@@ -38,6 +38,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* img.main-bg{
+  opacity: 0.5;
+} */
+
 html, body, #root {
   min-height: 100vh;
   margin: 0;

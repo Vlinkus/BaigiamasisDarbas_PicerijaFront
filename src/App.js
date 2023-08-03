@@ -17,6 +17,11 @@ function App() {
     <Router>
       <Header />
       <div className="p_wrapper">
+        <img
+          className="main-bg"
+          src="./components/Images/menuBackground.webp"
+          alt=""
+        />
         <div className="p_content">
           <Switch>
             <Route path="/" exact component={ExampleComponent} />
