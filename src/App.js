@@ -10,7 +10,8 @@ import ExampleComponent from "./components/ExampleComponent";
 import PicosPage from "./PicosPage";
 import "./PicosPage.css";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
-
+import { AuthProvider } from "./components/auth/AuthProvider";
+import Users from "./components/Users";
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
             <Route path="/picos" exact component={PicosPage} />
             {/* <Route path="/pica/:id" exact component={PicoPage} /> */}
             <Route path="/manage/v1" exact component={ManagerPage} />
-          <Route path="/*" exact component={NotFound} />
-            
-        </Switch>
+            <Route path="/manage/users" exact component={Users} />
+            <Route path="/*" exact component={NotFound} />
+          </Switch>
         </div>
       </div>
       <Footer />

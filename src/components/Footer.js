@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="p_footer">
                 <div className="p_footer-heading footer-1">
                     <h2>About Us</h2>
-                    <Link to="/">Contacts</Link>
+                    <Link to="manage/v1">Contacts</Link>
                     <Link to="/404">Demo</Link>
                     <Link to="/picos">Customers</Link>
                     <Link to="#">Investors</Link>
