@@ -5,12 +5,13 @@ import NotFound from "./components/NotFound";
 import Footer from "./components/Footer";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
-import ExampleComponent from "./components/ExampleComponent";
+// import ExampleComponent from "./components/ExampleComponent";
 import PicosPage from "./PicosPage";
+import Home from "./components/Home";
 import "./PicosPage.css";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
 import { useTranslation } from "react-i18next";
-
+import Order from "./order";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -25,15 +26,15 @@ function App() {
         />
         <div className="p_content">
           <Switch>
-            <Route path="/" exact component={ExampleComponent} />
+            <Route path="/" exact component={Home} />
             <Route path="/login" exact component={LoginPage} />
             <Route path="/register" exact component={RegisterPage} />
             <Route path="/picos" exact component={PicosPage} />
+            <Route path="/order" component={Order} />
             {/* <Route path="/pica/:id" exact component={PicoPage} /> */}
             <Route path="/manage/v1" exact component={ManagerPage} />
-          <Route path="/*" exact component={NotFound} />
-            
-        </Switch>
+            <Route path="/*" exact component={NotFound} />
+          </Switch>
         </div>
       </div>
       <Footer />
