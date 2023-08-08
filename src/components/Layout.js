@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Header from "./Header"
+import Footer from "./Footer"
 
-const Layout = () => {
-    return (
-        <>
+export default function Layout() {
+    return (<>
         <Header />
         <div className="p_wrapper">
             <div className="p_content">
@@ -12,8 +11,5 @@ const Layout = () => {
             </div>
         </div>
         <Footer />
-        </>
-    )
+    </>)
 }
-
-export default Layout
