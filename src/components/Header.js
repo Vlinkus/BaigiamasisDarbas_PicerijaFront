@@ -28,6 +28,9 @@ export default function Header() {
             <Link to="/404">
               <div className="p_nav-item">{t("Contacts")}</div>
             </Link>
+            <Link to="/manage/v1">
+              <div className="p_nav-item">{t("Contacts")}</div>
+            </Link>
           </section>
           <section className="p_right-items">
             <Link to="/login">
