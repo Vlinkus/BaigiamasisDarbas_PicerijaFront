@@ -1,45 +1,59 @@
-import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./components/Header";
-import NotFound from "./components/NotFound";
-import Footer from "./components/Footer";
-import LoginPage from "./components/LoginPage";
-import RegisterPage from "./components/RegisterPage";
-// import ExampleComponent from "./components/ExampleComponent";
-import PicosPage from "./PicosPage";
 import Home from "./components/Home";
+import { useTranslation } from "react-i18next";
+import Layout from "./components/Layout";
+import RegisterPage from "./components/RegisterPage";
+import LoginPage from "./components/LoginPage";
+import NotFound from "./components/NotFound";
+import ExampleComponent from "./components/ExampleComponent";
+import PicosPage from "./PicosPage";
 import "./PicosPage.css";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
-import { useTranslation } from "react-i18next";
+import Users from "./components/Users";
+import { Routes, Route  } from "react-router-dom";
 import Order from "./order";
 
-function App() {
-  const { t, i18n } = useTranslation();
-  return (
-    <Router>
-      <Header />
-      <div className="p_wrapper">
-        <img
-          className="main-bg"
-          src="./components/Images/menuBackground.webp"
-          alt=""
-        />
-        <div className="p_content">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/login" exact component={LoginPage} />
-            <Route path="/register" exact component={RegisterPage} />
-            <Route path="/picos" exact component={PicosPage} />
-            <Route path="/order" component={Order} />
-            {/* <Route path="/pica/:id" exact component={PicoPage} /> */}
-            <Route path="/manage/v1" exact component={ManagerPage} />
-            <Route path="/*" exact component={NotFound} />
-          </Switch>
-        </div>
-      </div>
-      <Footer />
-    </Router>
-  );
+// temporary
+const ROLES = {
+  'User': 2001,
+  'Editor': 1984,
+  'Admin': 5150
 }
 
-export default App;
+export default function App() {
+  const { t, i18n } = useTranslation();
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        {/* public routes */}
+        <Route path="/" element={<Home/>} />
+        <Route path="login" element={<LoginPage/>} />
+        <Route path="register" element={<RegisterPage/>} />
+        <Route path="picos" element={<PicosPage/>} />
+        <Route path="order" element={<Order/>} />
+
+        <Route path="manage/v1" element={<ManagerPage/>} />
+        <Route path="/e" element={<ExampleComponent/>} />
+
+        {/* we want to protect these routes */}
+        {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}> */}
+          {/* <Route path="/manage/v1" element={<ManagerPage />} /> */}
+        {/* </Route> */}
+
+        {/* <Route element={<RequireAuth allowedRoles={[ROLES.Editor]} />}> */}
+          {/* <Route path="editor" element={<Editor />} /> */}
+        {/* </Route> */}
+
+        {/* <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}> */}
+          {/* <Route path="admin" element={<Admin />} /> */}
+        {/* </Route> */}
+
+        {/* <Route element={<RequireAuth allowedRoles={[ROLES.Editor, ROLES.Admin]} />}> */}
+          {/* <Route path="lounge" element={<Lounge />} /> */}
+        {/* </Route> */}
+
+        {/* catch all */}
+        <Route path="*" element={<NotFound/>} />
+      </Route>
+    </Routes>
+  )
+}

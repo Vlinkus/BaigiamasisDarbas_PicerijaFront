@@ -2,7 +2,7 @@ import { Navbar, Nav, NavbarBrand, NavItem, NavLink } from "reactstrap";
 import { NavbarProps } from "reactstrap";
 import Container from "react";
 import { Link } from "react-router-dom";
-import "./Appnavbar.css";
+// import "./Appnavbar.css";
 import pizzeria from "./Images/pizzeria.jpg";
 import i18n from "../i18n";
 import { useTranslation } from "react-i18next";

@@ -22,5 +22,7 @@
   "Size": "Dydis",
   "Menu": "Meniu",
   "DayPizza": "Šefas Pasirinktų",
-  "Mushrooms": "Grybai"
+  "Mushrooms": "Grybai",
+  "NoAuthorization": "Jus neturite preeigos prie šito puslapio",
+  "TryAuthorizing": "prisijunkite prie paskyros ir mėginkite savo sėkmę dar kartą!"
 }
