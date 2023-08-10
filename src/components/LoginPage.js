@@ -1,13 +1,17 @@
-import { useRef, useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 import Loader from "./loader/Loader";
-import AuthContext from '../context/AuthProvider';
 import axios from '../api/axios';
+
 const LOGIN_URL = '/api/v1/auth/login';
 
+export default function LoginPage(msg) {
+    const {setAuth} = useAuth();
 
-export default function LoginPage() {
-    const {setAuth} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     //const navigate = useNavigate()
     const [submitHandle, setSubmitHandle] = useState(false);
@@ -21,7 +25,6 @@ export default function LoginPage() {
 
     const [pwd,setPwd] = useState('');
     const [errMsg,setErrMsg] = useState('');
-    const [success,setSuccess] = useState(false);
 
     useEffect(() => {
         // if(success === false)
@@ -42,8 +45,8 @@ export default function LoginPage() {
     },[user,pwd])
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
         setSubmitHandle(true);
+        e.preventDefault();
         //console.log(user, pwd);
         try{
             const response = await axios.post(LOGIN_URL,
@@ -54,12 +57,13 @@ export default function LoginPage() {
                 }
             );
             //console.log("hmmm... ok?")
-            const at = String(response.data.access_token);
-            const rt = String(response.data.refresh_token);
-            setAuth({user, pwd, at, rt});
+            const accessToken = response.data.access_token;
+            const refresh = response.data.refresh_token;
+            const role = response.data.role;
+            setAuth({user, pwd, role, accessToken, refresh});
             setUser('')
             setPwd('')
-            setSuccess(true)
+            navigate(from, { replace: true });
         } catch (err) {
             if(!err?.response) {
                 setErrMsg('No server response, try later')
@@ -78,60 +82,51 @@ export default function LoginPage() {
 
     return (
     <section style={{maxWidth:"24em"}}>
-        {success ? (
-            <section>
-                <h1>You are logged in</h1>
-                <a href="/">Go to the main page?</a>
-            </section>
-        ) : (
-            <>
-                <div  ref={errRef} 
-                    className="p_error_box"
-                    style={{ display: errMsg ? "" : "none"}} 
-                    aria-live="assertive"
-                >{errMsg}</div>
+        <div  ref={errRef} 
+            className="p_error_box"
+            style={{ display: errMsg ? "" : "none"}} 
+            aria-live="assertive"
+        >{errMsg}</div>
 
-                <form onSubmit={handleSubmit}>
-                    <label>Vartotojo vardas *</label>
-                    <input 
-                        type="username" 
-                        value={user} 
-                        onChange={(e) => setUser(e.target.value)}
-                        placeholder="El. paštas" 
-                        ref={userRef} 
-                        autoComplete="off" 
-                        className="p_input-field" 
-                        required
-                    />
+        <form onSubmit={handleSubmit}>
+            <label>Vartotojo vardas *</label>
+            <input 
+                type="username" 
+                value={user} 
+                onChange={(e) => setUser(e.target.value)}
+                placeholder="El. paštas" 
+                ref={userRef} 
+                autoComplete="off" 
+                className="p_input-field" 
+                required
+            />
 
-                    <label>Slaptažodis *</label>
-                    <input 
-                        type="password"
-                        value={pwd}
-                        onChange={(e) => setPwd(e.target.value)}
-                        placeholder="Slaptažodis" 
-                        className="p_input-field" 
-                        required
-                    />
+            <label>Slaptažodis *</label>
+            <input 
+                type="password"
+                value={pwd}
+                onChange={(e) => setPwd(e.target.value)}
+                placeholder="Slaptažodis" 
+                className="p_input-field" 
+                required
+            />
 
-                    <input 
-                        type="checkbox" 
-                        id="cb" 
-                        value="Prisiminti mane"/>
-                    <label htmlFor="cb">Prisiminti mane</label><br/>
+            {/* <input 
+                type="checkbox" 
+                id="cb" 
+                value="Prisiminti mane"/>
+            <label htmlFor="cb">Prisiminti mane</label> */}<p></p>
 
-                    <button
-                        value="Prisijungti" 
-                        className="p_button"
-                        disabled={ !validName || !validPwd || submitHandle ? true : false}
-                    >Prisijungti</button>
-                    <br/>
-                </form> 
-                <Link to="#">Pamiršai slaptažodį?</Link><br/>
-                <div style={{ display: submitHandle ? "" : "none" }}>
-                    <Loader/>
-                </div>
-            </>
-        )}
+            <button
+                value="Prisijungti" 
+                className="p_button"
+                disabled={ !validName || !validPwd || submitHandle ? true : false}
+            >Prisijungti</button>
+            <br/>
+        </form> 
+        <Link to="#">Pamiršai slaptažodį?</Link><br/>
+        <div style={{ display: submitHandle ? "" : "none" }}>
+            <Loader/>
+        </div>
     </section>)
 }

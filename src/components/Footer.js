@@ -25,7 +25,7 @@ export default function Footer() {
           <Link to="/">Contacts</Link>
           <Link to="/404">Demo</Link>
           <Link to="/picos">Customers</Link>
-          <Link to="#">Investors</Link>
+          <Link to="/users">Investors</Link>
           <Link to="#">Terms of Service</Link>
         </div>
         <div className="p_footer-heading footer-2">

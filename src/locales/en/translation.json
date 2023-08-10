@@ -25,7 +25,8 @@
   "Champignon": "Pievagrybiai",
   "NoAuthorization": "You are not authorized to enter this page",
   "TryAuthorizing": "login to your account and try your luck once more!",
-  
+  "Manager": "Manager",
+  "Order": "Order",
   "agreement": "Susipažinau su \"Privatumo politika\" ir \"Svetainės naudojimosi taisyklėmis\" ir su jomis sutinku.",
   "R1": "Invalid Entry",
   "R2": "You must agree to the terms and conditions"

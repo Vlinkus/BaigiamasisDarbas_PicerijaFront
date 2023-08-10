@@ -114,7 +114,6 @@ export default function RegisterPage() {
                     withCredentials: true
                 }
             );
-            console.log(1)
             console.log(response?.data);
             console.log(response.data.access_token);
             console.log(response.data.refresh_token);

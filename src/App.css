@@ -71,8 +71,9 @@ html, body, #root {
   max-width: 90vw;
   margin: auto;
   display: flex;
-  height: 3.5em;
+  flex-wrap:wrap;
   justify-content: space-between;
+
 }
 .p_nav-logo {
   cursor: pointer;
@@ -100,6 +101,18 @@ html, body, #root {
 }
 .p_nav-item.active {
   background-color: #888;
+}
+.p_nav-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.33em;
+  height: 3.5em;
+  cursor: pointer;
+}
+.p_left-items>a , .p_right-items>a {
+  color: #fff;
+  text-decoration: none;
 }
 .p_footer-wrapper {
   background-image: url(./pic/bg1.svg);
@@ -177,7 +190,7 @@ html, body, #root {
   transition: 0.1s ease-out;
   cursor: not-allowed;
 }
-#footer-email {
+/* #footer-email {
   width: 14em;
   height: 2.5em;
   border-radius: 10px 0 0 10px;
@@ -208,8 +221,11 @@ html, body, #root {
 #footer-email-btn:active {
   background-color:darkorange;
   transition: none;
-}
+} */
 @media screen and (max-width: 1150px) {
+  .p_navbar_ {
+    max-width: 100vw;
+  }
   /* .footer{
     width: 95%;
     height: 50vh;
