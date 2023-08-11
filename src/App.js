@@ -14,6 +14,7 @@ import Users from "./components/Users";
 import Order from "./order";
 import "./PicosPage.css";
 import RequireAuth from "./components/RequireAuth";
+import PizzaCarousel from "./components/carousel/PizzaCarousel";
 
 // temporary
 const ROLES = {
@@ -28,6 +29,7 @@ export default function App() {
     <Routes>
       <Route path="/manage/" element={<ManagerLayout />}> 
         <Route path="v1" element={<ManagerPage />} />
+        
       </Route>
 
       <Route path="/" element={<Layout />}>
@@ -36,7 +38,9 @@ export default function App() {
         <Route path="login" element={<LoginPage/>} />
         <Route path="register" element={<RegisterPage/>} />
         <Route path="picos" element={<PicosPage/>} />
+        <Route path="picos" element={<PicosPage/>} />
         <Route path="order" element={<Order/>} />
+        <Route path="carousel" element={<PizzaCarousel/>} />
 
         {/* <Route path="manage/v1" element={<ManagerPage/>} /> */}
         <Route path="/e" element={<ExampleComponent/>} />

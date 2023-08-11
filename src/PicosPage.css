@@ -1,13 +1,7 @@
-body {
-  background-image: url("./components/Images/menuBackground.webp");
-  background-color: rgba(252,203,0,255);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 #root{
-  background: rgb(253,29,29);
-  background: linear-gradient(0deg, rgb(255, 0, 0) 0%, rgba(255, 0, 0) 20%, rgba(253,187,45,1) 45%, rgb(255, 204, 95) 100%);
+  background: rgb(255, 142, 142);
+  background: linear-gradient(0deg, rgb(255, 142, 142) 0%, rgba(255, 142, 142) 20%, rgb(252, 220, 151) 45%, rgb(252, 220, 151) 100%);
 }
 
 button {
@@ -21,10 +15,14 @@ button {
 }
 
 .pizzas-container {
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
 }
 
 .pizzas-list {
@@ -34,17 +32,23 @@ button {
 }
 
 .pizza-item {
-  width: 200px;
+  background-color: #ffffff;
+  font-size: larger;
+  padding: 20px;
   margin: 10px;
-  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 300px;
   border: 1px solid #ccc;
   text-align: center;
 }
 
 .pizza-item img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 50%;
 }
 .random-pizza {
   margin-top: 20px;
@@ -64,4 +68,47 @@ button {
 
 .random-pizza h2 {
   color: rgb(227, 52, 52);
+}
+.cartContainer div{
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #f8f8f8;
+  padding: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+ .cartContainer div ::before{
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  z-index: -1;
+}
+
+.decreasePizzaCount, .increasePizzaCount, .pizzaCountToAdd, .addToCart {
+  background-color: #ffffff;
+  font-size: larger;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-3 .col-sm-1 .cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row .cart{
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center;
 }
