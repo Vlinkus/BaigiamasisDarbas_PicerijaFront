@@ -3,8 +3,20 @@
   "language": "Kalba",
   "Pizzas": "Picos",
   "Contacts": "Kontaktai",
+
   "Login": "Prisijungti",
+  "Logout": "Atsijungti",
+  "Username": "Vartotojo vardas",
+  "FirstName": "Vardas",
+  "LastName": "Pavardė",
+  "Email": "El. paštas",
+  "Password": "Slaptažodis",
+  "ConfirmPassword": "Pakartokite slaptažodį",
+  "RememberMe": "Prisiminti manę",
+  "ForgotPassword": "Pamiršai slaptažodį",
   "Register": "Registruotis",
+  "Registration": "Registracija",
+
   "PageLost": "Ups, toks puslapis dingo",
   "TryHomePage": "...galite pabandyti grįžti į pagrindinį puslapį",
   "Ananasas": "Ananasas",
@@ -28,7 +40,23 @@
   "Manager": "Tvarkyklė",
   "Order": "Užsakymas",
   "agreement": "Susipažinau su \"Privatumo politika\" ir \"Svetainės naudojimosi taisyklėmis\" ir su jomis sutinku.",
-  "R1": "Neteisingai suvestos duomenys",
-  "R2": "Jūs privalote sitik"
+  
+  "NoServerResponse": "Serveris neatsiliepia, bandykite vėliau",
+  "InvalidEntry": "Neteisingai suvestos duomenys",
+  "MustAgree": "Jūs privalote sutikti su sąlygomis ir nuostatomis.",
+  "WrongCredentials": "Neteisingas vartotojo vardas arba slaptažodis",
+  "InternalError": "Įvyko vidinė serverio klaida",
+  "LoginFailed": "Nepavyko prisijungti",
+  "RegistrationFailed": "Nepavyko užsiregistruotis",
 
+  "AboutUs": "About Us",
+  "Demo": "Demo",
+  "Customers": "Customers",
+  "Investors": "Investors",
+  "TermsOfService": "Terms of Service",
+  "Contact Us": "Contact Us",
+  "Jobs": "Jobs",
+  "Support": "Support",
+  "Sponsorships": "Sponsorships",
+  "Social media": "Social media"
 }

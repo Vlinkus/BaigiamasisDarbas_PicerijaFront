@@ -2,11 +2,12 @@ import axios from '../api/axios';
 import useAuth from './useAuth';
 
 export default function useRefreshToken() {
-    const { setAuth } = useAuth();
+    const { auth, setAuth } = useAuth();
 
     const refresh = async () => {
         try {
             const response = await axios.post('/refresh-token',{
+                headers: {'Authorization': 'Bearer ' + auth.refresh},
                 withCredentials: true
             })
 

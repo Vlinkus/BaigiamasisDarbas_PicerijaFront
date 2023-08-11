@@ -1,12 +1,14 @@
 import { useRef, useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import useAuth from '../hooks/useAuth';
 import Loader from "./loader/Loader";
 import axios from '../api/axios';
 
 const LOGIN_URL = '/api/v1/auth/login';
 
-export default function LoginPage(msg) {
+export default function LoginPage() {
+    const { t } = useTranslation();
     const {setAuth} = useAuth();
 
     const navigate = useNavigate();
@@ -60,19 +62,20 @@ export default function LoginPage(msg) {
             const accessToken = response.data.access_token;
             const refresh = response.data.refresh_token;
             const role = response.data.role;
-            setAuth({user, pwd, role, accessToken, refresh});
+            const key = response.data.key; // password
+            setAuth({user, key, role, accessToken, refresh});
             setUser('')
             setPwd('')
             navigate(from, { replace: true });
         } catch (err) {
             if(!err?.response) {
-                setErrMsg('No server response, try later')
+                setErrMsg( t("NoServerResponse") )
             } if (err?.response?.status === 403) {
-                setErrMsg('Wrong username or password')
+                setErrMsg( t("WrongCredentials"))
             } else if (err?.response?.status === 500) {
-                setErrMsg('Internal server error')
+                setErrMsg( t("InternalError") )
             } else {
-                setErrMsg('Login failed')
+                setErrMsg( t("LoginFailed") )
             }
             errRef.current.focus();
         } finally {
@@ -89,42 +92,44 @@ export default function LoginPage(msg) {
         >{errMsg}</div>
 
         <form onSubmit={handleSubmit}>
-            <label>Vartotojo vardas *</label>
+            <label>{t("Username")} *</label>
             <input 
-                type="username" 
+                type="text"
+                name="username" 
                 value={user} 
                 onChange={(e) => setUser(e.target.value)}
-                placeholder="El. paštas" 
+                placeholder={t("Username")} 
                 ref={userRef} 
                 autoComplete="off" 
                 className="p_input-field" 
                 required
             />
 
-            <label>Slaptažodis *</label>
+            <label>{t("Password")} *</label>
             <input 
                 type="password"
+                name="password"
                 value={pwd}
                 onChange={(e) => setPwd(e.target.value)}
-                placeholder="Slaptažodis" 
+                placeholder={t("Password")}
                 className="p_input-field" 
                 required
             />
 
-            {/* <input 
+            <input 
                 type="checkbox" 
                 id="cb" 
                 value="Prisiminti mane"/>
-            <label htmlFor="cb">Prisiminti mane</label> */}<p></p>
+            <label htmlFor="cb">{t("RememberMe")}</label>
 
             <button
-                value="Prisijungti" 
+                // value="Prisijungti" 
                 className="p_button"
                 disabled={ !validName || !validPwd || submitHandle ? true : false}
-            >Prisijungti</button>
+            >{t("Login")}</button>
             <br/>
         </form> 
-        <Link to="#">Pamiršai slaptažodį?</Link><br/>
+        <Link to="#">{t("ForgotPassword")}?</Link><br/>
         <div style={{ display: submitHandle ? "" : "none" }}>
             <Loader/>
         </div>

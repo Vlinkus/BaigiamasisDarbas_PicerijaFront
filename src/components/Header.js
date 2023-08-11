@@ -21,7 +21,7 @@ export default function Header() {
   const logout = async () => {
     setAuth({});
     setShowLogin(false)
-    navigate('/');
+    navigate('/', { replace: true });
   }
 
   const changeLanguageHandler = (e) => {
@@ -43,7 +43,7 @@ export default function Header() {
             <Link to="/404">
               <div className="p_nav-item">{t("Contacts")}</div>
             </Link>
-            { showLogin ? (<></>): (
+            { showLogin && auth?.role ? (<></>): (
             <Link to="/manage/v1">
               <div className="p_nav-item">{t("Manager")}</div>
             </Link>
@@ -64,13 +64,13 @@ export default function Header() {
             </>) : (<>
 
             <Link onClick={logout}>
-            <div className="p_nav-item">Logout</div>
+            <div className="p_nav-item">{t("Logout")}</div>
             </Link>
 
             </>)}
 
             <Link to="/order">
-              <div className="p_nav-item">Order</div>
+              <div className="p_nav-item">{t("Order")}</div>
             </Link>
 
             <select

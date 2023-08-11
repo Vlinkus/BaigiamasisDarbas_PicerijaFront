@@ -1,7 +1,9 @@
 //import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import Loader from "./loader/Loader";
 import axios from "../api/axios";
+
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{7,31}$/; 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -9,6 +11,8 @@ const EMAIL_REGEX = /^[A-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const REGISTER_URL = "/api/v1/auth/register";
 
 export default function RegisterPage() {
+    const { t } = useTranslation();
+
     const userRef = useRef();
     const errRef = useRef();
 
@@ -46,8 +50,6 @@ export default function RegisterPage() {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
     
-    const agreementText = 
-        "Susipažinau su \"Privatumo politika\" ir \"Svetainės naudojimosi taisyklėmis\" ir su jomis sutinku.";
     const [agreement, setAgreement] = useState(false);
 
     useEffect(() => {
@@ -130,7 +132,7 @@ export default function RegisterPage() {
         } catch (err) {
             console.log(err)
             if (!err?.response) {
-                setErrMsg('No server response, try later');
+                setErrMsg( t("NoServerResponse") );
             } else if (err.response.status === 406 &&
                  Array.isArray(err.response.data.errors)) {
                 setErrMsg(err.response.data.errors);
@@ -139,7 +141,7 @@ export default function RegisterPage() {
            } else if (err.response.status === 400) {
                 setErrMsg(err.response.data.error);
             } else {
-                setErrMsg('Registration Failed')
+                setErrMsg( t("RegistrationFailed") )
             }
             errRef.current.focus();
         } finally {
@@ -160,7 +162,7 @@ export default function RegisterPage() {
                 </div>
             ) : (
             <>
-            <h2>Registracija</h2>
+            <h2>{t("Registration")}</h2>
             <div  ref={errRef} 
                 className="p_error_box"
                 style={{ display: errMsg ? "" : "none"}} 
@@ -170,7 +172,7 @@ export default function RegisterPage() {
             <form onSubmit={handleSubmit}>
                 {/* Username input section */}
                 <label htmlFor="username">
-                    Vartotojo vardas:
+                    {t("Username")}:
                     <span style={{ display: validName  || !user ? "none" : "" }}>
                         ❌
                     </span>
@@ -203,7 +205,7 @@ export default function RegisterPage() {
 
                 {/* Firstname input section */}
                 <label htmlFor="name">
-                    Vardas:
+                    {t("FirstName")}:
                     <span style={{ display: validFirstname  || !firstname ? "none" : "" }}>
                         ❌
                     </span>
@@ -231,7 +233,7 @@ export default function RegisterPage() {
 
                 {/* Lastname input section */}
                 <label htmlFor="lastname">
-                    Pavarde:
+                    {t("LastName")}:
                     <span style={{ display: validLastname  || !lastname ? "none" : "" }}>
                         ❌
                     </span>
@@ -258,7 +260,7 @@ export default function RegisterPage() {
 
 
                 <label htmlFor="email">
-                    El. paštas:
+                    {t("Email")}:
                     <span style={{display: validEmail  || !email ? "none" : "" }}>
                         ❌
                     </span>
@@ -286,7 +288,7 @@ export default function RegisterPage() {
 
 
                 <label htmlFor="password">
-                Slaptažodis:
+                {t("Password")}:
                     <span style={{ display: validPwd  || !pwd ? "none" : "" }}>
                         ❌
                     </span>
@@ -315,7 +317,7 @@ export default function RegisterPage() {
 
 
                 <label htmlFor="confirm_pwd">
-                    Pakartokite slaptažodį:
+                    {t("ConfirmPassword")}:
                     <span style={{ display: validMatch || !matchPwd ? "none" : "" }}>
                         ❌
                     </span>
@@ -350,14 +352,13 @@ export default function RegisterPage() {
                 <label 
                     style={{ fontSize: "0.85em"}} 
                     htmlFor="agr"
-                >{agreementText}</label>
+                >{t("agreement")}</label>
 
-                
                 <button 
                     id="sub_button"
                     className="p_button"
                     disabled={ !validName || !validFirstname || !validLastname || !validEmail || !validPwd || !validMatch || !agreement || submitHandle ? true : false}
-                >Registruotis</button>
+                >{t("Register")}</button>
                 <div style={{ display: submitHandle ? "" : "none" }}>
                 <Loader/>
                 </div>
