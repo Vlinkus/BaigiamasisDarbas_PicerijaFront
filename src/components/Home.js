@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import useAuth from "../hooks/useAuth";
 import "./Home.css";
 import front from "./Images/front.jpg";
 import PizzaCarousel from "./carousel/PizzaCarousel";
 
 export default function Home() {
+  const { auth } = useAuth();
+  useEffect(() => {
+    console.log(auth)
+  },[])
   return (
     <div className="container-front">
       <div className="row">
@@ -18,6 +24,5 @@ export default function Home() {
         <div className="col-2">Column3</div>
       </div>
     </div>
-    
   );
 }
