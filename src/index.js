@@ -5,7 +5,7 @@ import { AuthProvider } from "./context/AuthProvider";
 import App from "./App";
 import "./i18n";
 import "./App.css";
-import i18n from "./i18n";
+//import i18n from "./i18n";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 

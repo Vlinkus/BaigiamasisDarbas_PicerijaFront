@@ -10,24 +10,20 @@ import ExampleComponent from "./components/ExampleComponent";
 import PicosPage from "./PicosPage";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
 import ManagerLayout from "./components/ManagerLayout";
+import RequireAuth from "./components/RequireAuth";
 import Users from "./components/Users";
 import Order from "./order";
 import "./PicosPage.css";
-import RequireAuth from "./components/RequireAuth";
-
-// temporary
-const ROLES = {
-  'User': 2001,
-  'Editor': 1984,
-  'Admin': 5150
-}
 
 export default function App() {
   const { t, i18n } = useTranslation();
   return (
     <Routes>
-      <Route path="/manage/" element={<ManagerLayout />}> 
-        <Route path="v1" element={<ManagerPage />} />
+
+      <Route path="/manage/" element={<ManagerLayout />}>
+        <Route element={<RequireAuth allowedRoles={["ADMIN","MANAGER"]} />}> 
+          <Route path="v1" element={<ManagerPage />} />
+        </Route>
       </Route>
 
       <Route path="/" element={<Layout />}>
@@ -42,21 +38,9 @@ export default function App() {
         <Route path="/e" element={<ExampleComponent/>} />
 
         {/* we want to protect these routes */}
-        {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}> */}
-          {/* <Route path="/manage/v1" element={<ManagerPage />} /> */}
-        {/* </Route> */}
-
-        {/* <Route element={<RequireAuth allowedRoles={[ROLES.Editor]} />}> */}
-          {/* <Route path="editor" element={<Editor />} /> */}
-        {/* </Route> */}
-
-        {/* <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}> */}
-          {/* <Route path="admin" element={<Admin />} /> */}
-        {/* </Route> */}
-
-        {/* <Route element={<RequireAuth allowedRoles={[ROLES.Editor, ROLES.Admin]} />}> */}
-          {/* <Route path="lounge" element={<Lounge />} /> */}
-        {/* </Route> */}
+        <Route element={<RequireAuth allowedRoles={["USER","ADMIN","MANAGER"]} />}>
+          <Route path="/users" element={<Users />} />
+        </Route>
 
         {/* catch all */}
         <Route path="unauthorized" element={<Unauthorized/>} />
