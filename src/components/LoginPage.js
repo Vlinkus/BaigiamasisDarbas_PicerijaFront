@@ -9,7 +9,7 @@ const LOGIN_URL = '/api/v1/auth/login';
 
 export default function LoginPage() {
     const { t } = useTranslation();
-    const {setAuth} = useAuth();
+    const {setAuth, persist, setPersist} = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -58,12 +58,10 @@ export default function LoginPage() {
                     withCredentials: true
                 }
             );
-            //console.log("hmmm... ok?")
             const accessToken = response.data.access_token;
-            const refresh = response.data.refresh_token;
+            // const refresh = response.data.refresh_token;
             const role = response.data.role;
-            const key = response.data.key; // password
-            setAuth({user, key, role, accessToken, refresh});
+            setAuth({user, role, accessToken});
             setUser('')
             setPwd('')
             navigate(from, { replace: true });
@@ -82,6 +80,14 @@ export default function LoginPage() {
             setSubmitHandle(false);
         }
     }
+
+    const togglePersist = () => {
+        setPersist(prev => !prev)
+    }
+
+    useEffect(() => {
+        localStorage.setItem("persist",persist)
+    },[persist])
 
     return (
     <section style={{maxWidth:"24em"}}>
@@ -119,13 +125,17 @@ export default function LoginPage() {
             <input 
                 type="checkbox" 
                 id="cb" 
+                onChange={togglePersist}
+                checked={persist}
                 value="Prisiminti mane"/>
             <label htmlFor="cb">{t("RememberMe")}</label>
 
             <button
                 // value="Prisijungti" 
                 className="p_button"
-                disabled={ !validName || !validPwd || submitHandle ? true : false}
+                disabled={ !validName ||
+                     !validPwd ||
+                      submitHandle ? true : false}
             >{t("Login")}</button>
             <br/>
         </form> 

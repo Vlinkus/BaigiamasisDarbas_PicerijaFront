@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const hour = new Date().getHours();
   const openHour = 10;
   const closeHour = 22;
@@ -16,26 +19,25 @@ export default function Footer() {
       </div>
     );
   }
-
   return (
     <footer className="p_footer-wrapper">
       <div className="p_footer">
         <div className="p_footer-heading footer-1">
-          <h2>About Us</h2>
-          <Link to="/">Contacts</Link>
-          <Link to="/404">Demo</Link>
-          <Link to="/picos">Customers</Link>
-          <Link to="/users">Investors</Link>
-          <Link to="#">Terms of Service</Link>
+          <h2>{t("AboutUs")}</h2>
+          <Link to="/">{t("Contacts")}</Link>
+          <Link to="/404">{t("Demo")}</Link>
+          <Link to="/picos">{t("Customers")}</Link>
+          <Link to="/users">{t("Investors")}</Link>
+          <Link to="#">{t("TermsOfService")}</Link>
         </div>
         <div className="p_footer-heading footer-2">
-          <h2>Contact Us</h2>
-          <Link to="#">Jobs</Link>
-          <Link to="#">Support</Link>
-          <Link to="#">Sponsorships</Link>
+          <h2>{t("Contact Us")}</h2>
+          <Link to="#">{t("Jobs")}</Link>
+          <Link to="#">{t("Support")}</Link>
+          <Link to="#">{t("Sponsorships")}</Link>
         </div>
         <div className="p_footer-heading footer-3">
-          <h2>Social media</h2>
+          <h2>{t("SocialMedia")}</h2>
           <Link to="#">Facebook</Link>
           <Link to="#">Instagram</Link>
           <Link to="#">Youtube</Link>

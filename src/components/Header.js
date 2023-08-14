@@ -1,26 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import useLogout from "../hooks/useLogout";
 import pizzeria from "./Images/pizzeria.jpg";
-import i18n from "./TranslationComponents/i18n";
 import { useTranslation } from "react-i18next";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
 
 export default function Header() {
+  const navigate = useNavigate();
+  const logout = useLogout();
+
   const { t, i18n } = useTranslation();
-  const { axiosPrivate }  = useAxiosPrivate();
   const [ showLogin, setShowLogin ] = useState();
   
   const { auth, setAuth  } = useAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     setShowLogin(Object.keys(auth).length === 0)
   },[auth])
 
-  const logout = async () => {
-    setAuth({});
-    setShowLogin(false)
+  const signOut = async () => {
+    await logout();
     navigate('/', { replace: true });
   }
 
@@ -43,11 +42,11 @@ export default function Header() {
             <Link to="/404">
               <div className="p_nav-item">{t("Contacts")}</div>
             </Link>
-            { showLogin && auth?.role ? (<></>): (
+            { !showLogin && ["ADMIN","MANAGER"].includes(auth?.role) ? (<>
             <Link to="/manage/v1">
               <div className="p_nav-item">{t("Manager")}</div>
             </Link>
-            )}
+            </>): (<></>)}
 
           </section>
           <section className="p_right-items">
@@ -63,7 +62,7 @@ export default function Header() {
 
             </>) : (<>
 
-            <Link onClick={logout}>
+            <Link onClick={signOut}>
             <div className="p_nav-item">{t("Logout")}</div>
             </Link>
 

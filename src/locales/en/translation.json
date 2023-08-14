@@ -37,6 +37,8 @@
   "Champignon": "Champignon",
   "NoAuthorization": "You are not authorized to enter this page",
   "TryAuthorizing": "login to your account and try your luck once more!",
+  "RegistrationSuccessful": "Registration successful!",
+  "NowCanLogin": "Now you can login to yout new account!",
 
   "loading": "Loading...",
   "yourcart": "Your cart",
@@ -57,12 +59,12 @@
   "Demo": "Demo",
   "Customers": "Customers",
   "Investors": "Investors",
-  "Terms of Service": "Terms of Service",
+  "TermsOfService": "Terms of Service",
   "Contact Us": "Contact Us",
   "Jobs": "Jobs",
   "Support": "Support",
   "Sponsorships": "Sponsorships",
-  "Social media": "Social media",
+  "SocialMedia": "Social media",
   "OrderIt": "Order",
   "total":"Total:",
 
