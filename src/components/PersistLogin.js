@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useRefreshToken from '../hooks/useRefreshToken';
+import useLogout from "../hooks/useLogout";
 import useAuth from '../hooks/useAuth';
 
 const PersistLogin = () => {
     const [isLoading, setIsLoading] = useState(true);
     const refresh = useRefreshToken();
     const { auth, persist } = useAuth();
+    const logout = useLogout();
 
     useEffect(() => {
         let isMounted = true;
@@ -23,9 +25,16 @@ const PersistLogin = () => {
                 isMounted && setIsLoading(false);
             }
         }
+        const signOut = async () => {
+            try {
+                await logout();
+            } catch (err) {
+                console.error(err);
+            }
+        }
 
         // console.log(`auth.at = ${!auth?.accessToken}`)
-        // console.log(`persist = ${persist}`)
+        !persist && signOut();
         // persist added here AFTER tutorial video
         // Avoids unwanted call to verifyRefreshToken
         // !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false);
