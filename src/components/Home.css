@@ -1,48 +1,30 @@
-.header {
-  align-self: stretch;
-}
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
-.header h1 {
-  color: #edc84b;
-
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 5.2rem;
-  font-weight: 300;
-  letter-spacing: 3px;
+.container {
   position: relative;
-  width: 100%;
-  display: block;
+  display: inline-block;
 }
 
-.header h1::before,
-.header h1::after {
-  display: block;
-  content: "";
-  height: 3px;
-  width: 4rem;
-  background-color: #edc84b;
-  position: absolute;
-  top: calc(50% - 1px);
-}
-
-.header h1::before {
-  left: 0;
-}
-
-.header h1::after {
-  right: 0;
-}
-
-.firstImage img {
-  max-width: 100%;
+.container img {
+  max-width: 150%;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  opacity: 0.8;
 }
 
-.col-6 .carousel div {
-  height: 200px;
+.custom-header {
+  font-family: 'UnifrakturMaguntia', sans-serif;
+  color: #d7ccc0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+  font-style: italic;
+  white-space: pre;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  
 }
+
 
