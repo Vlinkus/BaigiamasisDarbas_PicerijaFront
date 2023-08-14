@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from "react-i18next";
-import '../i18n';
+import '../TranslationComponents/i18n';
 
-function PizzaRow({ pizza, uniqueId, pizzaCount, setPizzaCount }) {
+function PizzaRow({ pizza, uniqueId, pizzaCount, setPizzaCount, addPizzaToCart }) {
     const { t, i18n } = useTranslation();
 
     const changeLanguageHandler = (e) => {
@@ -23,8 +23,12 @@ function PizzaRow({ pizza, uniqueId, pizzaCount, setPizzaCount }) {
     return `data:image/*;base64,${base64String}`;
   };
 
+  const addPizzaToCartHandler = () => {
+    addPizzaToCart(pizza, pizzaCount);
+  };
+
   return (
-      <div key={pizza.id} className="col-4 pizza-item">
+      <div key={pizza.id} className="pizza-item">
           {pizza.pizzaPhoto && (
               <img
                   src={base64ToImageUrl(pizza.pizzaPhoto)}
@@ -46,13 +50,13 @@ function PizzaRow({ pizza, uniqueId, pizzaCount, setPizzaCount }) {
                       <button className="decreasePizzaCount" onClick={handleDecrease}>-</button>
                   </div>
                   <div className="col-3 col-sm-1 cart">
-                      <input type="text" className="pizzaCountToAdd" value={pizzaCount} />
+                      <input type="text" className="pizzaCountToAdd" value={pizzaCount} onChange={(e) => setPizzaCount(uniqueId, parseInt(e.target.value, 10))}/>
                   </div>
                   <div className="col-3 col-sm-1 cart">
                       <button className="increasePizzaCount" onClick={handleIncrease}>+</button>
                   </div>
                   <div className="col-3 col-sm-1 cart add_to_cart">
-                      <button className="addToCart">Add</button>
+                      <button className="addToCart" onClick={addPizzaToCartHandler}>Add</button>
                   </div>
               </div>
           </div>

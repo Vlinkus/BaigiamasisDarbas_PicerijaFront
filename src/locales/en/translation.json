@@ -37,6 +37,7 @@
   "Champignon": "Champignon",
   "NoAuthorization": "You are not authorized to enter this page",
   "TryAuthorizing": "login to your account and try your luck once more!",
+
   "loading": "Loading...",
   "yourcart": "Your cart",
   "yourcartempty": "Your cart is empty",
@@ -61,5 +62,7 @@
   "Jobs": "Jobs",
   "Support": "Support",
   "Sponsorships": "Sponsorships",
-  "Social media": "Social media"
+  "Social media": "Social media",
+  "OrderIt": "Order",
+  "total":"Total:"
 }

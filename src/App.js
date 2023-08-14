@@ -7,14 +7,13 @@ import LoginPage from "./components/LoginPage";
 import NotFound from "./components/NotFound";
 import Unauthorized from "./components/Unauthorized";
 import ExampleComponent from "./components/ExampleComponent";
-import PicosPage from "./PicosPage";
+import PicosPage from "./components/PizzaComponents/PicosPage";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
 import ManagerLayout from "./components/ManagerLayout";
 import RequireAuth from "./components/RequireAuth";
 import Users from "./components/Users";
 import Order from "./order";
-import "./PicosPage.css";
-import RequireAuth from "./components/RequireAuth";
+import "./components/PizzaComponents/PicosPage.css";
 import PizzaCarousel from "./components/carousel/PizzaCarousel";
 
 // temporary

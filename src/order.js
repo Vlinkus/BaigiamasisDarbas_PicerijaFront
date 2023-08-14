@@ -19,10 +19,26 @@ function Order() {
       .get("/api/orders")
       .then((response) => {
         setOrders(response.data);
+        console.log("Orders Before Sorting ", orders);
+        // sortOrders();
+        
       })
       .catch((error) => {
         console.error("Klaida gavus užsakymų duomenis:", error);
       });
+  };
+  const sortOrders = () => {
+    const sortedOrders = [];
+    for (let i = 0; i < orders.length; i++) {
+      const pizzaFromOrder = orders[i];
+      if (sortedOrders.some(pizza => pizza.pizzaName === pizzaFromOrder.pizzaName)) {
+        continue;
+      }
+      const count = orders.filter(pizza => pizza.pizzaName === pizzaFromOrder.pizzaName).length;
+      sortedOrders.push({ pizzaFromOrder, count });
+    }
+    console.log("sortedOrders After Sorting ", sortedOrders);
+    setOrders(sortedOrders);
   };
 
   const fetchAllPizzas = () => {
