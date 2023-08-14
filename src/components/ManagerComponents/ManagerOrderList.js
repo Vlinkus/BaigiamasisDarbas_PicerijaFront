@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./order.css";
 
-function Order() {
+function ManagerOrdersList() {
   const [orders, setOrders] = useState([]);
   const [selectedOrderId, setSelectedOrderId] = useState(null);
   const [selectedOrderPizzas, setSelectedOrderPizzas] = useState([]);
@@ -18,28 +17,28 @@ function Order() {
     axios
       .get("/api/orders")
       .then((response) => {
-        setOrders(response.data);
-        console.log("Orders Before Sorting ", orders);
-        // sortOrders();
-        
+        sortOrders(response.data);
       })
       .catch((error) => {
         console.error("Klaida gavus užsakymų duomenis:", error);
       });
   };
-  const sortOrders = () => {
+  const sortOrders = (ordersData) => {
     const sortedOrders = [];
-    for (let i = 0; i < orders.length; i++) {
-      const pizzaFromOrder = orders[i];
-      if (sortedOrders.some(pizza => pizza.pizzaName === pizzaFromOrder.pizzaName)) {
-        continue;
-      }
-      const count = orders.filter(pizza => pizza.pizzaName === pizzaFromOrder.pizzaName).length;
-      sortedOrders.push({ pizzaFromOrder, count });
-    }
-    console.log("sortedOrders After Sorting ", sortedOrders);
+    ordersData.forEach(order => {
+      const updatedOrder = { id: order.id, price: order.price, pizzas: [] };
+      const distinctPizzaNames = [...new Set(order.pizzas.map(pizza => pizza.pizzaName))];
+      for (let i = 0; i < distinctPizzaNames.length; i++) {
+        const pizza = order.pizzas.find(pizza => pizza.pizzaName === distinctPizzaNames[i]);
+        const count = order.pizzas.filter(pizza => pizza.pizzaName === distinctPizzaNames[i]).length;
+        updatedOrder.pizzas.push({pizza, count }); 
+      } 
+      sortedOrders.push(updatedOrder);
+    })
     setOrders(sortedOrders);
+    console.log(sortedOrders);
   };
+   
 
   const fetchAllPizzas = () => {
     axios
@@ -52,7 +51,7 @@ function Order() {
       });
   };
 
-  const handleDeleteClick = (orderId) => {
+  const handleDelete = (orderId) => {
     axios
       .delete(`/api/order/${orderId}`)
       .then((response) => {
@@ -106,46 +105,54 @@ function Order() {
   };
 
   return (
-    <div className="order-container">
-      <h1>Užsakymai</h1>
-      <table className="order-table">
-        <thead>
-          <tr>
-            <th>Užsakymo nr</th>
-            <th>Picos pavadinimas</th>
-            <th>Kaina</th> {/* New column for total price */}
-            <th>Veiksmai</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) =>
+    <>
+     <h1>Užsakymai</h1>
+            <table className="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">El.Nr.</th>
+                            <th scope="col">Užsakymo nr</th>
+                            <th scope="col">Picos pavadinimas</th>
+                            <th scope="col">Kiekis</th>
+                            <th scope="col">Kaina</th>
+                            <th scope="col">Veiksmai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+          {orders.map((order, orderIndex) =>
             order.pizzas.map((pizza, index) => (
-              <tr key={order.id + pizza.id}>
+              <tr key={`${order.id}_${pizza.pizza.id}`}>
                 {index === 0 ? (
+                <td rowSpan={order.pizzas.length}>{orderIndex+1}</td>
+                ) : null}
+                {index === 0 ? (
+                  
                   <td rowSpan={order.pizzas.length}>{order.id}</td>
                 ) : null}
-                <td>{pizza.pizzaName}</td>
+                <td>{pizza.pizza.pizzaName}</td>
+                <td>{pizza.count}</td>
                 {/* New column for total price */}
                 {index === 0 ? (
                   <td rowSpan={order.pizzas.length}>
-                    {order.price.toFixed(2)} €
+                    {order.price.toFixed(2)}€
                   </td>
                 ) : null}
                 {index === 0 ? (
                   <td rowSpan={order.pizzas.length}>
-                    <button onClick={() => handleEditClick(order.id)}>
-                      Edit
-                    </button>
-                    <button onClick={() => handleDeleteClick(order.id)}>
-                      Delete
-                    </button>
+                    <button type="button" className="btn btn-warning"  > {/*onClick={() => handleUpdate(order)} */}
+                                    Atnaujinti
+                                </button>
+                                <button type="button" className="btn btn-danger" onClick={() => handleDelete(order.id)} > 
+                                    Ištrinti
+                                </button>
                   </td>
                 ) : null}
               </tr>
             ))
           )}
         </tbody>
-      </table>
+                </table>
+     
       {selectedOrderId !== null && (
         <div className="edit-order-popup">
           <div className="edit-order-content">
@@ -187,8 +194,8 @@ function Order() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
-export default Order;
+export default ManagerOrdersList;

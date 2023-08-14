@@ -4,15 +4,6 @@
   background: linear-gradient(0deg, rgb(255, 142, 142) 0%, rgba(255, 142, 142) 20%, rgb(252, 220, 151) 45%, rgb(252, 220, 151) 100%);
 }
 
-button {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #6e7b27;
-  color: rgb(126, 16, 16);
-  border: none;
-  cursor: pointer;
-}
 
 .pizzas-container {
   background-color: #f8f8f8;

@@ -3,7 +3,7 @@
   "language": "Language",
   "Pizzas": "Pizzas",
   "Contacts": "Contacts",
-
+  "Products":"Products",
   "Login": "Login",
   "Logout": "Logout",
   "Username": "Username",
@@ -43,6 +43,7 @@
   "yourcartempty": "Your cart is empty",
   "Manager": "Manager",
   "Order": "Order",
+  "Orders": "Orders",
   "agreement": "I have read and agree to the \"Privacy Policy\" and \"Terms of Use\".",
   
   "NoServerResponse": "No server response, try later",
@@ -64,5 +65,9 @@
   "Sponsorships": "Sponsorships",
   "Social media": "Social media",
   "OrderIt": "Order",
-  "total":"Total:"
+  "total":"Total:",
+  "mngGuide": "Management Guide",
+  "mngMenu": "Management Menu",
+  "seeSideBar": "On the sidebar you can click on desired menu section . Currently you are in Management Guide section.",
+  "seeButtonsBellow":"Detailed description for each menu section - Press Button:"
 }

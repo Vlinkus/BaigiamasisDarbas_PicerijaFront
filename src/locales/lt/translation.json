@@ -3,7 +3,7 @@
   "language": "Kalba",
   "Pizzas": "Picos",
   "Contacts": "Kontaktai",
-
+  "Products": "Produktai",
   "Login": "Prisijungti",
   "Logout": "Atsijungti",
   "Username": "Vartotojo vardas",
@@ -42,6 +42,7 @@
   "yourcartempty": "Jūsų krepšelis tuščias",
   "Manager": "Tvarkyklė",
   "Order": "Užsakymas",
+  "Orders": "Užsakymai",
   "agreement": "Susipažinau su \"Privatumo politika\" ir \"Svetainės naudojimosi taisyklėmis\" ir su jomis sutinku.",
   
   "NoServerResponse": "Serveris neatsiliepia, bandykite vėliau",
@@ -63,5 +64,9 @@
   "Sponsorships": "Sponsorships",
   "Social media": "Social media",
   "OrderIt": "Užsakyti",
-  "total": "Iš Viso:"
+  "total": "Iš Viso:",
+  "mngGuide": "Naudojimosi Instrukcija",
+  "mngMenu": "Valdytojo Meniu",
+  "seeSideBar": "Kairėje pusėje galite pasirinkti skiltį. Šiuo metu  jūs esate Naudojimosi Instrukcija skiltyje.",
+  "seeButtonsBellow":"Aprašymai apie kiekvieną skiltį - paspaudus mygtuką:"
 }
