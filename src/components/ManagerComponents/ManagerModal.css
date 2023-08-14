@@ -5,3 +5,17 @@
   .modal.display-none {
     display: none !important;
   }
+
+  .instructionButtons{
+    width: 100%;
+  }
+
+  .btn.btn-outline-secondary.instructionButton{
+    width: 20%;
+    height: 3em;
+    margin: 10px;
+  }
+
+  .col.py-3.manager{
+    background-color: white;
+  }
