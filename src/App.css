@@ -6,8 +6,9 @@
   opacity: 0.5;
 } */
 
-html, body, #root {
+html, #root {
   min-height: 100vh;
+  min-width: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -115,6 +116,7 @@ html, body, #root {
   text-decoration: none;
 }
 .p_footer-wrapper {
+  background-color: #339966;
   background-image: url(./pic/bg1.svg);
   padding: 4rem 0;
   bottom: 0;

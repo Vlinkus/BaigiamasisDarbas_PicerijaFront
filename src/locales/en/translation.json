@@ -3,6 +3,7 @@
   "language": "Language",
   "Pizzas": "Pizzas",
   "Contacts": "Contacts",
+  "Manager": "Manager",
 
   "Login": "Login",
   "Logout": "Logout",
@@ -37,7 +38,6 @@
   "Champignon": "Champignon",
   "NoAuthorization": "You are not authorized to enter this page",
   "TryAuthorizing": "login to your account and try your luck once more!",
-  "Manager": "Manager",
   "Order": "Order",
   "agreement": "I have read and agree to the \"Privacy Policy\" and \"Terms of Use\".",
   
@@ -49,15 +49,14 @@
   "LoginFailed": "Login failed",
   "RegistrationFailed": "Registration failed",
 
-  "About Us": "About Us",
-  "Contacts": "Contacts",
+  "AboutUs": "About Us",
   "Demo": "Demo",
   "Customers": "Customers",
   "Investors": "Investors",
-  "Terms of Service": "Terms of Service",
+  "TermsOfService": "Terms of Service",
   "Contact Us": "Contact Us",
   "Jobs": "Jobs",
   "Support": "Support",
   "Sponsorships": "Sponsorships",
-  "Social media": "Social media"
+  "SocialMedia": "Social media"
 }

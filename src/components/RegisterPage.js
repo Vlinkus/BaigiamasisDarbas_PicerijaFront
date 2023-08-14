@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import Loader from "./loader/Loader";
 import axios from "../api/axios";
 
-
 const USER_REGEX = /^[A-z][A-z0-9-_]{7,31}$/; 
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[A-z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -80,7 +79,7 @@ export default function RegisterPage() {
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd])
+    }, [user, firstname, lastname, email, pwd, matchPwd])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -93,11 +92,11 @@ export default function RegisterPage() {
         const v5 = EMAIL_REGEX.test(email);
         const v6 = agreement;
         if (!v1 || !v2 || !v3 || !v4 || !v5) {
-            setErrMsg("Invalid Entry");
+            setErrMsg(t("InvalidEntry"));
             setSubmitHandle(false);
             return;
         } else if (!v6) {
-            setErrMsg("You must agree to the terms and conditions");
+            setErrMsg(t("MustAgree"));
             setSubmitHandle(false);
             return;
         }
@@ -116,13 +115,10 @@ export default function RegisterPage() {
                     withCredentials: true
                 }
             );
-            console.log(response?.data);
-            console.log(response.data.access_token);
-            console.log(response.data.refresh_token);
+            // console.log(response?.data);
+            // console.log(response.data.access_token);
             console.log(JSON.stringify(response))
             setSuccess(true);
-            //clear state and controlled inputs
-            //need value attrib on inputs for this
             setUser('');
             setFirstname('');
             setLastname('');

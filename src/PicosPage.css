@@ -1,9 +1,9 @@
-body {
+/* body {
   background-image: url("./components/Images/menuBackground.webp");
   background-color: rgba(252,203,0,255);
   background-size: cover;
   background-repeat: no-repeat;
-}
+} */
 
 #root{
   background: rgb(253,29,29);

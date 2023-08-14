@@ -1,32 +1,22 @@
-import { useState, useEffect } from "react";
+import axios from "../api/axios";
 import useAuth from "./useAuth";
-import axios from "axios";
 
 const useLogout = () => {
-  const [isLoggedOut, setIsLoggedOut] = useState(false);
-  const { auth } = useAuth();
+    const { auth, setAuth } = useAuth();
 
-  useEffect(() => {
-    if (isLoggedOut) {
-      // Perform the logout operation using Axios
-      axios.post("/api/v1/auth/logout")
-        .then(() => {
-          // Do any necessary cleanup or state management
-          // For example, clear user data from local storage, etc.
-          // You might want to redirect the user after successful logout
-        })
-        .catch((error) => {
-          console.error("Logout failed:", error);
-          // Handle error if necessary
-        });
+    const logout = async () => {
+        try {
+            const response = await axios.get('/api/v1/auth/logout', {
+                headers: {'Authorization': `Bearer ${auth?.accessToken}`},
+                withCredentials: true
+            });
+            setAuth({});
+        } catch (err) {
+            console.error(err);
+        }
     }
-  }, [isLoggedOut]);
 
-  const logout = () => {
-    setIsLoggedOut(true);
-  };
-
-  return logout;
-};
+    return logout;
+}
 
 export default useLogout

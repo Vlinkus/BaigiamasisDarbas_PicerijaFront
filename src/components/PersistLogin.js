@@ -12,6 +12,7 @@ const PersistLogin = () => {
         let isMounted = true;
 
         const verifyRefreshToken = async () => {
+            console.log('verifying refresh token')
             try {
                 await refresh();
             }
@@ -23,8 +24,11 @@ const PersistLogin = () => {
             }
         }
 
+        // console.log(`auth.at = ${!auth?.accessToken}`)
+        // console.log(`persist = ${persist}`)
         // persist added here AFTER tutorial video
         // Avoids unwanted call to verifyRefreshToken
+        // !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false);
         !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false);
 
         return () => isMounted = false;

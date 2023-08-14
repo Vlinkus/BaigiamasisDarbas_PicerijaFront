@@ -4,9 +4,6 @@ import "./Home.css";
 
 export default function Home() {
   const { auth } = useAuth();
-  useEffect(() => {
-    console.log(auth)
-  },[])
 
   return (<>
     <h1>
