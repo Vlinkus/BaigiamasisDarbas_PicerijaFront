@@ -37,6 +37,8 @@
   "Champignon": "Champignon",
   "NoAuthorization": "You are not authorized to enter this page",
   "TryAuthorizing": "login to your account and try your luck once more!",
+  "RegistrationSuccessful": "Registration successful!",
+  "NowCanLogin": "Now you can login to yout new account!",
 
   "loading": "Loading...",
   "yourcart": "Your cart",
@@ -58,16 +60,23 @@
   "Demo": "Demo",
   "Customers": "Customers",
   "Investors": "Investors",
-  "Terms of Service": "Terms of Service",
+  "TermsOfService": "Terms of Service",
   "Contact Us": "Contact Us",
   "Jobs": "Jobs",
   "Support": "Support",
   "Sponsorships": "Sponsorships",
-  "Social media": "Social media",
+  "SocialMedia": "Social media",
   "OrderIt": "Order",
   "total":"Total:",
   "mngGuide": "Management Guide",
   "mngMenu": "Management Menu",
   "seeSideBar": "On the sidebar you can click on desired menu section . Currently you are in Management Guide section.",
-  "seeButtonsBellow":"Detailed description for each menu section - Press Button:"
+  "seeButtonsBellow":"Detailed description for each menu section - Press Button:",
+  "Authentic Italian Cuisine": "Authentic Italian Cuisine",
+  "Creative Dishes to Choose From": "Creative Dishes to Choose From",
+  "All from Our Stone Oven": "All from Our Stone Oven",
+  "All Organic": "All Organic",
+  "All Delicious": "All Delicious"
+
+  
 }
