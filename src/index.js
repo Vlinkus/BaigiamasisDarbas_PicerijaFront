@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
 import App from "./App";
-import "./i18n";
+import "./components/TranslationComponents/i18n";
 import "./App.css";
 //import i18n from "./i18n";
 import "bootstrap/dist/css/bootstrap.min.css";

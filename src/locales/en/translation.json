@@ -37,6 +37,10 @@
   "Champignon": "Champignon",
   "NoAuthorization": "You are not authorized to enter this page",
   "TryAuthorizing": "login to your account and try your luck once more!",
+
+  "loading": "Loading...",
+  "yourcart": "Your cart",
+  "yourcartempty": "Your cart is empty",
   "Manager": "Manager",
   "Order": "Order",
   "agreement": "I have read and agree to the \"Privacy Policy\" and \"Terms of Use\".",
@@ -50,7 +54,6 @@
   "RegistrationFailed": "Registration failed",
 
   "About Us": "About Us",
-  "Contacts": "Contacts",
   "Demo": "Demo",
   "Customers": "Customers",
   "Investors": "Investors",
@@ -59,5 +62,7 @@
   "Jobs": "Jobs",
   "Support": "Support",
   "Sponsorships": "Sponsorships",
-  "Social media": "Social media"
+  "Social media": "Social media",
+  "OrderIt": "Order",
+  "total":"Total:"
 }

@@ -37,6 +37,9 @@
   "Champignon": "Pievagrybiai",
   "NoAuthorization": "Jus neturite preeigos prie šito puslapio",
   "TryAuthorizing": "prisijunkite prie paskyros ir mėginkite savo sėkmę dar kartą!",
+  "loading": "Kraunasi...",
+  "yourcart": "Jūsų krepšelis",
+  "yourcartempty": "Jūsų krepšelis tuščias",
   "Manager": "Tvarkyklė",
   "Order": "Užsakymas",
   "agreement": "Susipažinau su \"Privatumo politika\" ir \"Svetainės naudojimosi taisyklėmis\" ir su jomis sutinku.",
@@ -58,5 +61,7 @@
   "Jobs": "Jobs",
   "Support": "Support",
   "Sponsorships": "Sponsorships",
-  "Social media": "Social media"
+  "Social media": "Social media",
+  "OrderIt": "Užsakyti",
+  "total": "Iš Viso:"
 }

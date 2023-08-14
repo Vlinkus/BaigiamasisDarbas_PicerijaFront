@@ -33,3 +33,16 @@
 .header h1::after {
   right: 0;
 }
+
+.firstImage img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.col-6 .carousel div {
+  height: 200px;
+}
+
