@@ -2,16 +2,20 @@ import { useEffect, useState } from 'react';
 import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
 import CartRow from './CartRow.js';
 import axios from 'axios';
+import OrderSubmittedModal from './OrderSubmittedModal';
+import { Modal} from "reactstrap";
 
-export default function Cart({cart, updatePizzaCount} ){
+export default function Cart({cart, updatePizzaCount, clearCart} ){
     const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
     const [showCart, setShowCart] = useState(false);
     const [cartTotal, setCartTotal] = useState(0);
     const [order, setOrder] = useState([]);
+    const [isOrderSubmitted, setOrderSubmitted] = useState(false);
 
     const toggleCartVisibility = () => {
         setShowCart(cart.length>0);
       };
+
       useEffect(() => {
         const sum = cart.reduce((total, pizza) => total + pizza.count * pizza.pizzaPrice, 0);
         setCartTotal(sum);
@@ -38,11 +42,18 @@ export default function Cart({cart, updatePizzaCount} ){
         })
         .then((response) => {
         console.log(response);
+        setOrderSubmitted(true);
         })
         .catch((error) => {
           console.error("Klaida išsaugant picos pakeitimus", error);
         });
     }
+
+    const handleCloseModal = () => {
+      console.log(order);
+      clearCart();
+      setOrderSubmitted(false);
+    };
 
     return(
         <div className="col-3 cartContainer">
@@ -70,6 +81,9 @@ export default function Cart({cart, updatePizzaCount} ){
                 
                 )}
             </div>
+            {isOrderSubmitted &&
+            <OrderSubmittedModal showModal={isOrderSubmitted} onClose={handleCloseModal} order={order} />
+            }
         </div>
 
     );

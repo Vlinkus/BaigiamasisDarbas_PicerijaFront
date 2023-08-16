@@ -23,14 +23,14 @@ function CartRow({ pizza, updatePizzaCount  }) {
               <h2>{pizza.pizzaName}</h2>
               <p>{t("Price")}: {pizza.pizzaPrice} €</p>
               
-              <div className="row cart d-flex align-items-center">
-                  <div className="col-3 col-sm-1 cart">
+              <div className="row cart-align-items-center">
+                  <div className="col cart-row-buttons">
                       <button className="decreasePizzaCount" onClick={handleDecrease}>-</button>
                   </div>
-                  <div className="col-3 col-sm-1 cart">
+                  <div className="col cart-row-buttons">
                       <input type="text" className="pizzaCountToAdd" value={pizza.count} onChange={(e) => updatePizzaCount(pizza.id, parseInt(e.target.value, 10))}/>
                   </div>
-                  <div className="col-3 col-sm-1 cart">
+                  <div className="col cart-row-buttons">
                       <button className="increasePizzaCount" onClick={handleIncrease}>+</button>
                   </div>
               </div>

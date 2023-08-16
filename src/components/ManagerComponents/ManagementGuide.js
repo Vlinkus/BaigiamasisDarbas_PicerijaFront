@@ -14,6 +14,7 @@ export default function ManagementGuid (){
             <h1>{t("mngGuide")}</h1>
             <p className="lead">
                 {t("seeSideBar")}
+            </p>
                 <ol>
                     <li>{t("mngGuide")}</li>
                     <li>{t("Pizzas")}</li>
@@ -21,7 +22,7 @@ export default function ManagementGuid (){
                     <li>{t("Orders")}</li>
                 </ol>
                 {t("seeButtonsBellow")}
-            </p>
+            
                 <div className="instructionButtons" >
                 <button type="button" className="btn btn-outline-secondary instructionButton"
                     onClick={() => handleSubMenuClick('products')}
