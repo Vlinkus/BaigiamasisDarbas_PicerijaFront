@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductUpdateCreateModal from "./ProductUpdateCreateModal";
+import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
 
 function ManagerProductsList(){
     const [products, setProduct] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
 
     useEffect(() => {
       axios
@@ -45,23 +47,23 @@ function ManagerProductsList(){
         };
         const handleCreatNewProduct = () =>{
             setSelectedProduct(null);
+            console.log(products);
             setShowModal(true);
         }
 
     return(
         <>
             <button type="button" className="btn btn-success" onClick={() => handleCreatNewProduct()}>
-                Pridėti Naują Produktą
+                {t("Add New Product")}
             </button>
-            <h2>Produktų sąrašas</h2>
+            <h2>{t("Products List")}</h2>
             <table className="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">El.Nr.</th>
-                            <th scope="col">Pavadinimas</th>
-                            <th scope="col">Kaina</th>
-                            <th scope="col">Pica</th>
-                            <th scope="col">Veiksmai</th>
+                            <th scope="col">{t("Line Number")}</th>
+                            <th scope="col">{t("Product Name")}</th>
+                            <th scope="col">{t("Unit Price")}</th>
+                            <th scope="col">{t("Actions")}</th>
                             {/* public Product(String productName, Pizza pizza, double productPrice) */}
                         </tr>
                     </thead>
@@ -70,15 +72,14 @@ function ManagerProductsList(){
                     {products.map((product, index) => (
                         <tr key={index}>
                             <th scope="row">{index+1}</th>
-                            <td>{product.productName}</td>
+                            <td>{t(`${product.productName}`)}</td>
                             <td>{product.productPrice} €</td>
-                            <td>{product.pizza}</td>
                             <td>
                                 <button type="button" className="btn btn-warning" onClick={() => handleUpdate(product)}>
-                                    Atnaujinti
+                                    {t("Update")}
                                 </button>
                                 <button type="button" className="btn btn-danger" onClick={() => handleDelete(product.id)}>
-                                    Ištrinti
+                                    {t("Delete")}
                                 </button>
                             </td>
                         </tr>

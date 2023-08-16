@@ -37,6 +37,10 @@ export default function PicosPage() {
     return `data:image/*;base64,${base64String}`;
   };
 
+  const clearCart = () => {
+    setCart([]);
+  }
+
   useEffect(() => {
     if (pizzas.length > 0 && randomPizzaIndex === null) {
       const newRandomPizzaIndex = Math.floor(Math.random() * pizzas.length);
@@ -103,9 +107,8 @@ export default function PicosPage() {
   };
   
   return (
-    // <div className="container">
       <div className="row">
-        <div className="col-9">
+        <div className="col-9 mainPizzaContainer">
           <div className="pizzas-container">
             {isPending && <div>{t("loading")}</div>}
             <h1>{t("Pizzas")}</h1>
@@ -146,8 +149,7 @@ export default function PicosPage() {
             )}
           </div>
         </div>
-        <Cart cart={cart} updatePizzaCount={updatePizzaCountInCart}/>
+        <Cart cart={cart} updatePizzaCount={updatePizzaCountInCart} clearCart={clearCart} />
       </div>
-    // </div>
   );
 }

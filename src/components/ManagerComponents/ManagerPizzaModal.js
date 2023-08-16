@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Button,Label,Input,Form,FormGroup} from "reactstrap";
 import "./ManagerModal.css";
+import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
 
 function ManagerPizzaModal({ showModal, closeModal, pizza }) {
   const [pizzaToEdit, setPizzaToEdit] = useState({
@@ -19,7 +20,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
   const pizzaModalClassName = showModal
     ? "modal display-block"
     : "modal display-none";
-
+  const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
   useEffect(() => {
     axios
       .get("/api/products")
@@ -107,7 +108,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="pizzaModalLabel">
-                Picos {pizzaToEdit.pizzaName ? "Atnaujinimas" : "Pridėjimas"}
+              {t("Pizza")} {pizzaToEdit.pizzaName ? `${t("Update")}` : "Pridėjimas"} 
               </h5>
             </div>
             <div className="modal-body">
@@ -115,7 +116,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                 <div className="row">
                   <div className="col">
                     <FormGroup>
-                      <Label htmlFor="pizzaName">Pavadinimas</Label>
+                      <Label htmlFor="pizzaName">{t("Pizza Name")}</Label>
                       <Input
                         type="text"
                         name="pizzaName"
@@ -126,7 +127,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label htmlFor="pizzaPrice">Kaina</Label>
+                      <Label htmlFor="pizzaPrice">{t("Unit Price")}</Label>
                       <Input
                         type="text"
                         name="pizzaPrice"
@@ -137,7 +138,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label htmlFor="pizzaSize">Dydis</Label>
+                      <Label htmlFor="pizzaSize">{t("Pizza Size")}</Label>
                       <Input
                         type="text"
                         name="pizzaSize"
@@ -148,7 +149,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <h4 htmlFor="pizzaSize">Produktai</h4>
+                      <h4 htmlFor="pizzaSize">{t("Products")}</h4>
                       {productsList.map((product) => (
                         <div className="form-check" key={product.id}>
                           <Input
@@ -161,12 +162,6 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                             )}
                             onChange={(event) => {
                               const { value, checked } = event.target;
-                              console.log(
-                                "Is product Included in pizza ",
-                                pizzaToEdit.products.some(
-                                  (p) => p.id === product.id
-                                )
-                              );
                               handleProductCheck(product, checked);
                             }}
                           />
@@ -174,7 +169,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                             className="form-check-label"
                             htmlFor={`productCheckBox_${product.id}`}
                           >
-                            {product.productName}
+                            {t(`${product.productName}`)}
                           </Label>
                         </div>
                       ))}
@@ -195,7 +190,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                         />
                       )}
                       <Label className="form-label" htmlFor="customFile">
-                        Pasirinkite naują paveikslėlį
+                        {t("Choose New Pizza Picture")}
                       </Label>
                       <Input
                         type="file"
@@ -214,10 +209,10 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                 className="btn btn-success"
                 onClick={handleSubmit}
               >
-                Patvirtinti
+                {t("Submit")}
               </button>
               <Button className="btn btn-warning" onClick={closeModal}>
-                Atšaukti
+                {t("Cancel")}
               </Button>
             </div>
           </div>

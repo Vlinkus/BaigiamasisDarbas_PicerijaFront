@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ManagerPizzaModal from "./ManagerPizzaModal";
+import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
 
 
 function ManagerPizzaList() {
     const [pizzas, setPizzas] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedPizza, setSelectedPizza] = useState(null);
+    const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
 
     useEffect(() => {
       axios
@@ -56,19 +58,19 @@ function ManagerPizzaList() {
     return (
         <>
             <button type="button" className="btn btn-success" onClick={() => handleCreatNewPizza()}>
-                Pridėti Naują Picą
+                {t("Add New Pizza")}
             </button>
-            <h3>Picos</h3>
+            <h1>{t("Pizzas")}</h1>
                 <table className="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">El.Nr.</th>
-                            <th scope="col">Pavadinimas</th>
-                            <th scope="col">Paveikslas</th>
-                            <th scope="col">Kaina</th>
-                            <th scope="col">Dydis</th>
-                            <th scope="col">Produktai</th>
-                            <th scope="col">Veiksmai</th>
+                            <th scope="col">{t("Line Number")}</th>
+                            <th scope="col">{t("Pizza Name")}</th>
+                            <th scope="col">{t("Pizza Picture")}</th>
+                            <th scope="col">{t("Unit Price")}</th>
+                            <th scope="col">{t("Pizza Size")}</th>
+                            <th scope="col">{t("Products")}</th>
+                            <th scope="col">{t("Actions")}</th>
                             {/* public Pizza(String pizzaName, byte[] pizzaPhoto, double pizzaPrice, int pizzaSize, List<Product> products */}
                         </tr>
                     </thead>
@@ -85,13 +87,13 @@ function ManagerPizzaList() {
                             </td>
                             <td>{pizza.pizzaPrice} €</td>
                             <td>{pizza.pizzaSize}</td>
-                            <td>{pizza.products.map((product) => (<p>{product.productName}</p>))}</td>
+                            <td>{pizza.products.map((product) => (<p key={`${pizza.id}${product.id}`}>{t(`${product.productName}`)}</p>))}</td>
                             <td>
                                 <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#SimpleModal" onClick={()=>handleUpdate(pizza)}>
-                                    Atnaujinti
+                                    {t("Update")}
                                 </button> 
                                 <button type="button" className="btn btn-danger" onClick={() => handleDelete(pizza.id)}>
-                                    Ištrinti
+                                    {t("Delete")}
                                 </button>
                             </td>
                         </tr>

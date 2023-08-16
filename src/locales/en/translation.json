@@ -76,7 +76,27 @@
   "Creative Dishes to Choose From": "Creative Dishes to Choose From",
   "All from Our Stone Oven": "All from Our Stone Oven",
   "All Organic": "All Organic",
-  "All Delicious": "All Delicious"
-
+  "All Delicious": "All Delicious",
+  "orderComplete": "Order Completed",
+  "close": "Close",
+  "willBeReadyShortly": "Your order will be prepared shortly. We look forward to your arrival.",
+  "Line Number":"Que.No.",
+  "Order No": "Order Number",
+  "Pizza Name": "Pizza Name",
+  "Pizza count": "Pizza Count",
+  "Unit Price": "Unit Price",
+  "Total Price": "Total Price",
+  "Actions":"Actions",
+  "Update": "Update",
+  "Delete":"Delete",
+  "Products List":"Products List",
+  "Add New Product":"Add New Product",
+  "Products Name":"Products Name",
+  "Pizza Size":"Pizza Size",
+  "Pizza Picture":"Pizza Picture",
+  "Add New Pizza":"Add New Pizza",
+  "Cancel":"Cancel",
+  "Submit":"Submit",
+  "Choose New Pizza Picture":"Choose New Pizza Picture"
   
 }

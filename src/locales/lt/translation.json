@@ -76,6 +76,27 @@
   "Creative Dishes to Choose From": "Pasirinkimas Iš Kūrybiškų Patiekalų",
   "All from Our Stone Oven": "Viskas Iš Mūsų Akmens Krosnies",
   "All Organic": "Viskas Ekologiška",
-  "All Delicious": "Viskas Skanu"
+  "All Delicious": "Viskas Skanu",
+  "Order Complete": "Užsakymas atlikas",
+  "close": "Uždaryti",
+  "willBeReadyShortly": "Jūsų užsakymas bus greitai paruoštas. Laukiame atvykstant.",
+  "Line Number":"Eil.Nr.",
+  "Order No": "Užsakymo Nr.",
+  "Pizza Name": "Picos Pavadinimas",
+  "Pizza count": "Picų Kiekis",
+  "Unit Price": "Vieneto Kaina",
+  "Total Price": "Iš viso",
+  "Actions":"Veiksmai",
+  "Update": "Atnaujinti",
+  "Delete":"Ištrinti",
+  "Products List": "Produktų sąrašas",
+  "Add New Product": "Pridėti Naują Produktą",
+  "Products Name":"Produkto Pavadinimas",
+  "Pizza Size": "Picos Dydis",
+  "Pizza Picture":"Picos Paveikslas",
+  "Add New Pizza":"Pridėti Naują Picą",
+  "Cancel":"Atšaukti",
+  "Submit":"Patvirtinti",
+  "Choose New Pizza Picture":"Pasirinkite naują Picos paveikslėlį"
 
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
 
 function ManagerOrdersList() {
   const [orders, setOrders] = useState([]);
@@ -7,6 +8,7 @@ function ManagerOrdersList() {
   const [selectedOrderPizzas, setSelectedOrderPizzas] = useState([]);
   const [allPizzas, setAllPizzas] = useState([]);
   const [editing, setEditing] = useState(false);
+  const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
 
   useEffect(() => {
     fetchOrders();
@@ -106,16 +108,17 @@ function ManagerOrdersList() {
 
   return (
     <>
-     <h1>Užsakymai</h1>
+     <h1>{t("Orders")}</h1>
             <table className="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">El.Nr.</th>
-                            <th scope="col">Užsakymo nr</th>
-                            <th scope="col">Picos pavadinimas</th>
-                            <th scope="col">Kiekis</th>
-                            <th scope="col">Kaina</th>
-                            <th scope="col">Veiksmai</th>
+                            <th scope="col">{t("Line Number")}</th>
+                            <th scope="col">{t("Order No")}</th>
+                            <th scope="col">{t("Pizza Name")}</th>
+                            <th scope="col">{t("Pizza Count")}</th>
+                            <th scope="col">{t("Unit Price")}</th>
+                            <th scope="col">{t("Total Price")}</th>
+                            <th scope="col">{t("Actions")}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,6 +134,7 @@ function ManagerOrdersList() {
                 ) : null}
                 <td>{pizza.pizza.pizzaName}</td>
                 <td>{pizza.count}</td>
+                <td>{pizza.pizza.pizzaPrice}</td>
                 {/* New column for total price */}
                 {index === 0 ? (
                   <td rowSpan={order.pizzas.length}>
@@ -140,10 +144,10 @@ function ManagerOrdersList() {
                 {index === 0 ? (
                   <td rowSpan={order.pizzas.length}>
                     <button type="button" className="btn btn-warning"  > {/*onClick={() => handleUpdate(order)} */}
-                                    Atnaujinti
+                                   {t("Update")}
                                 </button>
                                 <button type="button" className="btn btn-danger" onClick={() => handleDelete(order.id)} > 
-                                    Ištrinti
+                                    {t("Delete")}
                                 </button>
                   </td>
                 ) : null}

@@ -22,6 +22,15 @@
   justify-content: center;
 }
 
+.col-9.mainPizzaContainer{
+  min-width: 240px !important;
+}
+.order-submition-modal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .pizza-item {
   background-color: #ffffff;
   font-size: larger;
@@ -29,8 +38,8 @@
   margin: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  min-width: 150px;
-  max-width: 200px;
+  min-width: 200px;
+  max-width: 250px;
   border: 1px solid #ccc;
   text-align: center;
 }
@@ -81,21 +90,21 @@
 .decreasePizzaCount, .increasePizzaCount, .pizzaCountToAdd, .addToCart {
   background-color: #ffffff;
   font-size: larger;
-  padding: 20px;
-  margin: 5px;
+  padding: 10px;
+  margin: 0px;
+  align-content: center;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 60px;
-  height: 60px;
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.col-3 .col-sm-1 .cart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cart-row-buttons, .row.cart-align-items-center {
+  height: 100%;
 }
 
 .row .cart{
@@ -118,8 +127,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cart-complete{
+.cart-complete,.orderModalFooter{
   margin: auto;
   justify-content: center;
   align-items: center;
+}
+
+.orderModalHeader{
+  background-color: rgb(103, 189, 103);
 }
