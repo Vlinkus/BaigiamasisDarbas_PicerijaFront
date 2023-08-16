@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 export default function Header() {
   const navigate = useNavigate();
   const logout = useLogout();
+  const [ lang, setlang ] = useState(localStorage.getItem("lang"));
 
   const { t, i18n } = useTranslation();
   const [ showLogin, setShowLogin ] = useState();
@@ -26,6 +27,8 @@ export default function Header() {
   const changeLanguageHandler = (e) => {
     const languageValue = e.target.value;
     i18n.changeLanguage(languageValue);
+    setlang(languageValue);
+    localStorage.setItem("lang",languageValue);
   };
 
   return (
@@ -77,8 +80,8 @@ export default function Header() {
               style={{ width: 100 }}
               onChange={changeLanguageHandler}
             >
-              <option value="lt">Lietuvių</option>
-              <option value="en">English </option>
+              <option value="lt" selected={lang === "lt" ? true : false}>Lietuvių</option>
+              <option value="en" selected={lang === "en" ? true : false}>English </option>
             </select>
           </section>
         </div>

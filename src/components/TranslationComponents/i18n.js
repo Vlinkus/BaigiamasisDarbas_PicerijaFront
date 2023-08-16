@@ -19,12 +19,12 @@ const resources = {
 };
 
 //i18N Initialization
-
+let defaultLanguage = localStorage.getItem("lang") || "lt";
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng:"lt", //default language
+    lng: defaultLanguage, //default language
     keySeparator: false,
     interpolation: {
       escapeValue: false,
