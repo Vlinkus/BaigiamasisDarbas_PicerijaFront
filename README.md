@@ -17,9 +17,9 @@ jums taip pat reikės back-end dalies. Nuoroda pateikta po šią pastabą ↓</i
 
 - [**Įvadas**](#įvadas)
     - [Kūrėjai](#kūrėjai)
-- [**Serverio paleidimas**](#serverio-paleidimas)
-    - [Saugykla](#saugykla)
-- [**Serverio veikimas**](#serverio-veikimas)
+- [**Puslapio paleidimas**]()
+    - [Front dalies paleidimas](##Front dalies paleidimas)
+- [**Puslapio veikimas**](#serverio-veikimas)
     - [API komandos](#api-komandos)
         - [Swagger 3 - OpenAPI 3](#swagger-3---openapi-3)
         - [Autentikacija ir autorizacija](#autentikacija-ir-autorizacija)
