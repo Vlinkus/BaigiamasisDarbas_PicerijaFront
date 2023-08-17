@@ -138,7 +138,7 @@ export default function PicosPage() {
           {showRandomPizza ? (
             <div className="random-pizza">
               <h2>{pizzas[randomPizzaIndex].pizzaName}</h2>
-              <img
+              <img className="randomPizzaImage"
                 src={base64ToImageUrl(pizzas[randomPizzaIndex].pizzaPhoto)}
                 alt={pizzas[randomPizzaIndex].pizzaName}
               />

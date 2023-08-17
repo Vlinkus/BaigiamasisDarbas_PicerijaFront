@@ -18,12 +18,17 @@
     max-width: 400px;
     max-height: 400px;
   }
-.btn.btn-outline-secondary.instructionButton {
+  .btn.btn-dark.instructionButton {
+  font-size: 25px;
   width: 20%;
-  height: 3em;
+  height: 2em;
   margin: 10px;
 }
 
 .col.py-3.manager {
   background-color: white;
+}
+
+.managerGuidInstructionsList, .managerGuidIntroduction{
+  font-size: 25px;
 }
