@@ -1,8 +1,8 @@
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button} from "reactstrap";
-import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+import { useTranslationAndLanguageChange } from "../TranslationComponents/TranslationUtils";
 
-export default function OrderSubmittedModal ({ showModal, onClose, order }){
-    const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
+export default function OrderSubmittedModal({ showModal, onClose, order }) {
+  const { t, changeLanguageHandler } = useTranslationAndLanguageChange();
 
     return (
         <div className="order-submition-modal">

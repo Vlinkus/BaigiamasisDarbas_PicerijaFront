@@ -20,7 +20,6 @@ function ProductUpdateCreateModal({showModal, closeModal, product}){
             data: productToUpdate
         })
         .then((response) => {
-            console.log(response);
             closeModal();
         })
         .catch((error) => {

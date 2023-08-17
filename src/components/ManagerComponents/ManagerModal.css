@@ -1,20 +1,14 @@
 .modal.display-block {
-    display: block;
-  }
-  
-  .modal.display-none {
-    display: none !important;
-  }
+  display: block;
+}
 
-  .instructionButtons{
-    width: 100%;
-  }
+.modal.display-none {
+  display: none !important;
+}
 
-  .btn.btn-outline-secondary.instructionButton{
-    width: 20%;
-    height: 3em;
-    margin: 10px;
-  }
+.instructionButtons {
+  width: 100%;
+}
 
   .col.py-3.manager{
     background-color: white;
@@ -24,3 +18,12 @@
     max-width: 400px;
     max-height: 400px;
   }
+.btn.btn-outline-secondary.instructionButton {
+  width: 20%;
+  height: 3em;
+  margin: 10px;
+}
+
+.col.py-3.manager {
+  background-color: white;
+}

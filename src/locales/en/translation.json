@@ -3,7 +3,7 @@
   "language": "Language",
   "Pizzas": "Pizzas",
   "Contacts": "Contacts",
-  "Products":"Products",
+  "Products": "Products",
   "Login": "Login",
   "Logout": "Logout",
   "Username": "Username",
@@ -47,7 +47,7 @@
   "Order": "Order",
   "Orders": "Orders",
   "agreement": "I have read and agree to the \"Privacy Policy\" and \"Terms of Use\".",
-  
+
   "NoServerResponse": "No server response, try later",
   "InvalidEntry": "Invalid Entry",
   "MustAgree": "You must agree to the terms and conditions",
@@ -67,11 +67,11 @@
   "Sponsorships": "Sponsorships",
   "SocialMedia": "Social media",
   "OrderIt": "Order",
-  "total":"Total:",
+  "total": "Total:",
   "mngGuide": "Management Guide",
   "mngMenu": "Management Menu",
   "seeSideBar": "On the sidebar you can click on desired menu section . Currently you are in Management Guide section.",
-  "seeButtonsBellow":"Detailed description for each menu section - Press Button:",
+  "seeButtonsBellow": "Detailed description for each menu section - Press Button:",
   "Authentic Italian Cuisine": "Authentic Italian Cuisine",
   "Creative Dishes to Choose From": "Creative Dishes to Choose From",
   "All from Our Stone Oven": "All from Our Stone Oven",
@@ -80,13 +80,13 @@
   "orderComplete": "Order Completed",
   "close": "Close",
   "willBeReadyShortly": "Your order will be prepared shortly. We look forward to your arrival.",
-  "Line Number":"Que.No.",
+  "Line Number": "Que.No.",
   "Order No": "Order Number",
   "Pizza Name": "Pizza Name",
   "Pizza count": "Pizza Count",
   "Unit Price": "Unit Price",
   "Total Price": "Total Price",
-  "Actions":"Actions",
+  "Actions": "Actions",
   "Update": "Update",
   "Delete":"Delete",
   "Products List":"Products List",
@@ -108,6 +108,7 @@
   "Swiss Cheese": "Swiss Cheese",
   "Pickles": "Pickles",
   "Order Pirce": "Order Pirce",
-  "Updating order":"Updating Order No."
-  
+  "Updating order":"Updating Order No.",
+  "We're happy to welcome you between ": "We're happy to welcome you between ",
+  " and ": " and "
 }

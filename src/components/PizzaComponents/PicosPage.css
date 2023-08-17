@@ -1,9 +1,13 @@
-
-#root{
+#root {
   background: rgb(255, 142, 142);
-  background: linear-gradient(0deg, rgb(255, 142, 142) 0%, rgba(255, 142, 142) 20%, rgb(252, 220, 151) 45%, rgb(252, 220, 151) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(255, 142, 142) 0%,
+    rgba(255, 142, 142) 20%,
+    rgb(252, 220, 151) 45%,
+    rgb(252, 220, 151) 100%
+  );
 }
-
 
 .pizzas-container {
   background-color: #f8f8f8;
@@ -22,10 +26,10 @@
   justify-content: center;
 }
 
-.col-9.mainPizzaContainer{
+.col-9.mainPizzaContainer {
   min-width: 240px !important;
 }
-.order-submition-modal{
+.order-submition-modal {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +73,7 @@
 .random-pizza h2 {
   color: rgb(227, 52, 52);
 }
-.cartContainer div{
+.cartContainer div {
   position: relative;
   width: 100%;
   height: auto;
@@ -78,7 +82,7 @@
   border-radius: 5px;
   overflow: hidden;
 }
- .cartContainer div ::before{
+.cartContainer div ::before {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -87,7 +91,10 @@
   z-index: -1;
 }
 
-.decreasePizzaCount, .increasePizzaCount, .pizzaCountToAdd, .addToCart {
+.decreasePizzaCount,
+.increasePizzaCount,
+.pizzaCountToAdd,
+.addToCart {
   background-color: #ffffff;
   font-size: larger;
   padding: 10px;
@@ -123,14 +130,14 @@
   height: 100%;
 }
 
-.row .cart{
+.row .cart {
   margin-top: auto;
   display: flex;
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.placePizzaOrder{
+.placePizzaOrder {
   background-color: #ffffff1f;
   font-size: 2em;
   padding: 20px;
@@ -143,12 +150,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cart-complete,.orderModalFooter{
+.cart-complete,
+.orderModalFooter {
   margin: auto;
   justify-content: center;
   align-items: center;
 }
 
-.orderModalHeader{
+.orderModalHeader {
   background-color: rgb(103, 189, 103);
 }

@@ -1,3 +1,72 @@
+# Pizzeria - FRONT dalis
+<i>Atkreipkite dėmesį, kad projektas, kuriame tai skaitote, yra tik priekinė dalis!
+jums taip pat reikės back-end dalies. Nuoroda pateikta po šią pastabą ↓</i><br/>
+<a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija">Backas</a>
+
+[***Readme in english***](README_EN.md)
+
+# Turinys
+
+- [**Įvadas**](#įvadas)
+    - [Kūrėjai](#kūrėjai)
+- [**Puslapio paleidimas**](#Front-dalies-paleidimas)
+    - [**Kaip paleisti projektą su docker?**](#Kaip-paleisti-projektą-su-docker?)
+- [**Puslapio veikimas**](#serverio-veikimas)
+    - [API komandos](#api-komandos)
+        - [Swagger 3 - OpenAPI 3](#swagger-3---openapi-3)
+        - [Autentikacija ir autorizacija](#autentikacija-ir-autorizacija)
+            - [Registracija](#registracija)
+            - [Prisijungimas](#prisijungimas)
+            - [Atsijungimas](#atsijungimas)
+            - [Refresh tokenas](#refresh-tokenas)
+
+# Įvadas
+
+<p>Šiame baigiamajame projekte pateikiamas picerijos restorano priekinė dalis arba frontendas. 
+Dėl <i>"Back"</i> galinės dalies galite spustelėti 
+<a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija">šią nuorodą.</a></p>
+
+
+## Kūrėjai
+
+Šį projektą vykdė 3 dalyviai (vienas iš jų turėjo dvi paskyras😂):
+
+<a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Vlinkus/BaigiamasisDarbas_Picerija" width="40%"/>
+</a>
+
+
+
+# Front dalies paleidimas
+
+Prieš tęsdami įsitikinkite, kad jūsų sistemoje įdiegta bent ***JDK 17*** versijos.
+
+```shell
+git clone https://github.com/Vlinkus/BaigiamasisDarbas_PicerijaFront.git
+```
+
+Taip pat yra daug daugiau būdų, kaip atsiųsti šį projektą.
+Projekto "GitHub" saugykloje paspauskite mygtuką "*code*", kad gautumėte papildomų pasirinkimų.
+
+Po greito įdiegimo galėsite naudoti savo kodo redaktorių(*Eclipse*, *Intellij IDEA*,*Visual Studio Code*...)
+
+
+SVARBU
+
+Norint, kad projektas veiktų savo kodo redaktoriuje turite įvesti šias komandas ir jas paleisti:
+
+```shell
+npm i react@latest react-dom@latest
+```
+
+```shell
+npm install react-i18next i18next
+```
+
+```shell
+npm start
+```
+
 ## Kaip paleisti projektą su docker?
 
 ↓ ↓ ↓ Sukurti image (-t for tag) ↓ ↓ ↓
@@ -6,73 +75,53 @@
 ↓ ↓ ↓ ↓ Paleisti naują konteinerį (with volume!)
 > docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### API komandos
 
-## Available Scripts
+Projekto portas pagal nutylėjimą  nustatytas kaip 3000.
+Visose su api susijusiose nuorodose šiuose poskyriuose bus naudojamas anksčiau minėtas portas.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### Registracija
+Paskyros registravimas yra gana paprastas procesas:
+- Tai galite atlikte svetainėje, bet norint tūrėti aukštesnes roles, kaip ADMIN arba MANAGER, reikėtų naudoti    Postman arba sql duombazėje, pakeisti užregistruoto vertotojo rolę.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Postman instrukcija:
 
-### `npm run build`
+- Nustatyti *HTTP* užklausą į ``POST``
+- Nustatyti adresą ``localhost:8080/api/v1/auth/register``
+- Siųskite *JSON* kūną, kaip žemiau pateiktame pavyzdyje
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json
+{
+    "firstname": "Vardenis",
+    "lastname": "Pavardenis",
+    "username": "vartotojoVardas",
+    "email": "kaz@kas.lt",
+    "password": "slaptazodis",
+    "role": "ADMIN"
+}
+```
+Svarbu paminėti, kad laukas "*role*" nėra privalomas ir siuntėjas gali jo nenurodyti,
+tokiu atveju numatytasis registruojamo naudotojo vaidmuo bus "USER".
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Visi galimi vaidmenų(*rolių*) variantai: `USER`, `MANAGER`, `ADMIN`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Prisijungimas
+Prisijungimui reikia tik dviejų laukų.
+- Nustatyti *HTTP* užklausą į ``POST``
+- Nustatyti adresą ``localhost:8080/api/v1/auth/login``
 
-### `npm run eject`
+```json
+{
+    "username": "someUsername",
+    "password": "password"
+}
+```
+Sėkmingai patvirtinus autentiškumą, gausite ***JWT prieigos žetoną***(refresh token),
+naudotojo ***role*** ir ***HttpOnly atnaujinimo žetono slapuką***(HttpOnly refresh token cookie).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
