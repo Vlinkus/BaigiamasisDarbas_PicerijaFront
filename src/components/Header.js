@@ -67,7 +67,7 @@ export default function Header() {
               </>
             ) : (
               <>
-                <Link onClick={() => signOut()}>
+                <Link onClick={signOut()}>
                   <div className="p_nav-item">{t("Logout")}</div>
                 </Link>
               </>
