@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
+import { useTranslationAndLanguageChange } from "../TranslationComponents/TranslationUtils";
 
 function ManagerOrdersList() {
   const [orders, setOrders] = useState([]);
@@ -27,20 +27,25 @@ function ManagerOrdersList() {
   };
   const sortOrders = (ordersData) => {
     const sortedOrders = [];
-    ordersData.forEach(order => {
+    ordersData.forEach((order) => {
       const updatedOrder = { id: order.id, price: order.price, pizzas: [] };
-      const distinctPizzaNames = [...new Set(order.pizzas.map(pizza => pizza.pizzaName))];
+      const distinctPizzaNames = [
+        ...new Set(order.pizzas.map((pizza) => pizza.pizzaName))
+      ];
       for (let i = 0; i < distinctPizzaNames.length; i++) {
-        const pizza = order.pizzas.find(pizza => pizza.pizzaName === distinctPizzaNames[i]);
-        const count = order.pizzas.filter(pizza => pizza.pizzaName === distinctPizzaNames[i]).length;
-        updatedOrder.pizzas.push({pizza, count }); 
-      } 
+        const pizza = order.pizzas.find(
+          (pizza) => pizza.pizzaName === distinctPizzaNames[i]
+        );
+        const count = order.pizzas.filter(
+          (pizza) => pizza.pizzaName === distinctPizzaNames[i]
+        ).length;
+        updatedOrder.pizzas.push({ pizza, count });
+      }
       sortedOrders.push(updatedOrder);
-    })
+    });
     setOrders(sortedOrders);
     console.log(sortedOrders);
   };
-   
 
   const fetchAllPizzas = () => {
     axios
@@ -92,7 +97,7 @@ function ManagerOrdersList() {
   const handleSaveEdit = () => {
     const updatedOrder = {
       id: selectedOrderId,
-      pizzas: selectedOrderPizzas,
+      pizzas: selectedOrderPizzas
     };
     axios
       .put("/api/order", updatedOrder)
@@ -108,28 +113,27 @@ function ManagerOrdersList() {
 
   return (
     <>
-     <h1>{t("Orders")}</h1>
-            <table className="table table-hover table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">{t("Line Number")}</th>
-                            <th scope="col">{t("Order No")}</th>
-                            <th scope="col">{t("Pizza Name")}</th>
-                            <th scope="col">{t("Pizza Count")}</th>
-                            <th scope="col">{t("Unit Price")}</th>
-                            <th scope="col">{t("Total Price")}</th>
-                            <th scope="col">{t("Actions")}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+      <h1>{t("Orders")}</h1>
+      <table className="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">{t("Line Number")}</th>
+            <th scope="col">{t("Order No")}</th>
+            <th scope="col">{t("Pizza Name")}</th>
+            <th scope="col">{t("Pizza Count")}</th>
+            <th scope="col">{t("Unit Price")}</th>
+            <th scope="col">{t("Total Price")}</th>
+            <th scope="col">{t("Actions")}</th>
+          </tr>
+        </thead>
+        <tbody>
           {orders.map((order, orderIndex) =>
             order.pizzas.map((pizza, index) => (
               <tr key={`${order.id}_${pizza.pizza.id}`}>
                 {index === 0 ? (
-                <td rowSpan={order.pizzas.length}>{orderIndex+1}</td>
+                  <td rowSpan={order.pizzas.length}>{orderIndex + 1}</td>
                 ) : null}
                 {index === 0 ? (
-                  
                   <td rowSpan={order.pizzas.length}>{order.id}</td>
                 ) : null}
                 <td>{pizza.pizza.pizzaName}</td>
@@ -143,20 +147,26 @@ function ManagerOrdersList() {
                 ) : null}
                 {index === 0 ? (
                   <td rowSpan={order.pizzas.length}>
-                    <button type="button" className="btn btn-warning"  > {/*onClick={() => handleUpdate(order)} */}
-                                   {t("Update")}
-                                </button>
-                                <button type="button" className="btn btn-danger" onClick={() => handleDelete(order.id)} > 
-                                    {t("Delete")}
-                                </button>
+                    <button type="button" className="btn btn-warning">
+                      {" "}
+                      {/*onClick={() => handleUpdate(order)} */}
+                      {t("Update")}
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={() => handleDelete(order.id)}
+                    >
+                      {t("Delete")}
+                    </button>
                   </td>
                 ) : null}
               </tr>
             ))
           )}
         </tbody>
-                </table>
-     
+      </table>
+
       {selectedOrderId !== null && (
         <div className="edit-order-popup">
           <div className="edit-order-content">

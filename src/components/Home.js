@@ -14,7 +14,6 @@ export default function Home() {
 
   return (
     <div className="container">
-      
       <Link to="/picos">
         <img src={front} alt="menuBook" />
       </Link>

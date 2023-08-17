@@ -39,7 +39,7 @@
   "TryAuthorizing": "prisijunkite prie paskyros ir mėginkite savo sėkmę dar kartą!",
   "RegistrationSuccessful": "Registracija sėkminga!",
   "NowCanLogin": "Dabar galesite prisijungti prie paskyros!",
-  
+
   "loading": "Kraunasi...",
   "yourcart": "Jūsų krepšelis",
   "yourcartempty": "Jūsų krepšelis tuščias",
@@ -47,7 +47,7 @@
   "Order": "Užsakymas",
   "Orders": "Užsakymai",
   "agreement": "Susipažinau su \"Privatumo politika\" ir \"Svetainės naudojimosi taisyklėmis\" ir su jomis sutinku.",
-  
+
   "NoServerResponse": "Serveris neatsiliepia, bandykite vėliau",
   "InvalidEntry": "Neteisingai suvestos duomenys",
   "MustAgree": "Jūs privalote sutikti su sąlygomis ir nuostatomis.",
@@ -71,7 +71,7 @@
   "mngGuide": "Naudojimosi Instrukcija",
   "mngMenu": "Valdytojo Meniu",
   "seeSideBar": "Kairėje pusėje galite pasirinkti skiltį. Šiuo metu  jūs esate Naudojimosi Instrukcija skiltyje.",
-  "seeButtonsBellow":"Aprašymai apie kiekvieną skiltį - paspaudus mygtuką:",
+  "seeButtonsBellow": "Aprašymai apie kiekvieną skiltį - paspaudus mygtuką:",
   "Authentic Italian Cuisine": "Autentiška Italų Virtuvė",
   "Creative Dishes to Choose From": "Pasirinkimas Iš Kūrybiškų Patiekalų",
   "All from Our Stone Oven": "Viskas Iš Mūsų Akmens Krosnies",
@@ -80,23 +80,24 @@
   "Order Complete": "Užsakymas atlikas",
   "close": "Uždaryti",
   "willBeReadyShortly": "Jūsų užsakymas bus greitai paruoštas. Laukiame atvykstant.",
-  "Line Number":"Eil.Nr.",
+  "Line Number": "Eil.Nr.",
   "Order No": "Užsakymo Nr.",
   "Pizza Name": "Picos Pavadinimas",
   "Pizza count": "Picų Kiekis",
   "Unit Price": "Vieneto Kaina",
   "Total Price": "Iš viso",
-  "Actions":"Veiksmai",
+  "Actions": "Veiksmai",
   "Update": "Atnaujinti",
-  "Delete":"Ištrinti",
+  "Delete": "Ištrinti",
   "Products List": "Produktų sąrašas",
   "Add New Product": "Pridėti Naują Produktą",
-  "Products Name":"Produkto Pavadinimas",
+  "Products Name": "Produkto Pavadinimas",
   "Pizza Size": "Picos Dydis",
-  "Pizza Picture":"Picos Paveikslas",
-  "Add New Pizza":"Pridėti Naują Picą",
-  "Cancel":"Atšaukti",
-  "Submit":"Patvirtinti",
-  "Choose New Pizza Picture":"Pasirinkite naują Picos paveikslėlį"
-
+  "Pizza Picture": "Picos Paveikslas",
+  "Add New Pizza": "Pridėti Naują Picą",
+  "Cancel": "Atšaukti",
+  "Submit": "Patvirtinti",
+  "Choose New Pizza Picture": "Pasirinkite naują Picos paveikslėlį",
+  "We're happy to welcome you between ": "Mes džiaugiamės galėdami jus priimti tarp",
+  " and ": " ir "
 }
