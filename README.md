@@ -64,12 +64,17 @@ SVARBU
 
 Norint, kad projektas veiktų savo kodo redaktoriuje turite įvesti šias komandas ir jas paleisti:
 
+```shell
 npm i react@latest react-dom@latest
+```
 
+```shell
 npm install react-i18next i18next
+```
 
+```shell
 npm start
-
+```
 
 
 
