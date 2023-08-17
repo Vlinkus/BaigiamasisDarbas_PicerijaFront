@@ -3,6 +3,7 @@ import axios from "axios";
 import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
 import ManagerOrderModal from "./ManagerOrderModal";
 
+
 function ManagerOrdersList() {
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState([]);
@@ -28,16 +29,22 @@ function ManagerOrdersList() {
 
   const sortOrders = (ordersData) => {
     const sortedOrders = [];
-    ordersData.forEach(order => {
+    ordersData.forEach((order) => {
       const updatedOrder = { id: order.id, price: order.price, pizzas: [] };
-      const distinctPizzaNames = [...new Set(order.pizzas.map(pizza => pizza.pizzaName))];
+      const distinctPizzaNames = [
+        ...new Set(order.pizzas.map((pizza) => pizza.pizzaName))
+      ];
       for (let i = 0; i < distinctPizzaNames.length; i++) {
-        const pizza = order.pizzas.find(pizza => pizza.pizzaName === distinctPizzaNames[i]);
-        const count = order.pizzas.filter(pizza => pizza.pizzaName === distinctPizzaNames[i]).length;
-        updatedOrder.pizzas.push({pizza, count }); 
-      } 
+        const pizza = order.pizzas.find(
+          (pizza) => pizza.pizzaName === distinctPizzaNames[i]
+        );
+        const count = order.pizzas.filter(
+          (pizza) => pizza.pizzaName === distinctPizzaNames[i]
+        ).length;
+        updatedOrder.pizzas.push({ pizza, count });
+      }
       sortedOrders.push(updatedOrder);
-    })
+    });
     setOrders(sortedOrders);
   };
 
@@ -89,7 +96,6 @@ function ManagerOrdersList() {
                   <td rowSpan={order.pizzas.length}>{orderIndex + 1}</td>
                 ) : null}
                 {index === 0 ? (
-
                   <td rowSpan={order.pizzas.length}>{order.id}</td>
                 ) : null}
                 <td>{pizza.pizza.pizzaName}</td>

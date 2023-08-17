@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect,useState } from "react";
 import { Button,Label,Input,Form,FormGroup} from "reactstrap";
 import "./ManagerModal.css";
-import { useTranslationAndLanguageChange } from '../TranslationComponents/TranslationUtils';
+import { useTranslationAndLanguageChange } from "../TranslationComponents/TranslationUtils";
 
 function ManagerPizzaModal({ showModal, closeModal, pizza }) {
   const [pizzaToEdit, setPizzaToEdit] = useState({
@@ -12,7 +12,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
     pizzaPrice: pizza ? pizza.pizzaPrice : "",
     pizzaSize: pizza ? pizza.pizzaSize : "",
     pizzaPhoto: pizza ? pizza.pizzaPhoto : null,
-    products: pizza ? pizza.products : [],
+    products: pizza ? pizza.products : []
   });
   const formData = new FormData();
   const [productsList, setProductsList] = useState([]);
@@ -37,7 +37,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
       .request({
         url: "http://localhost:3000/api/pizza",
         method: method,
-        data: pizzaToEdit,
+        data: pizzaToEdit
       })
       .then((response) => {
         console.log(response);
@@ -55,14 +55,14 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
     if (isChecked) {
       setPizzaToEdit((prevPizza) => ({
         ...prevPizza,
-        products: [...prevPizza.products, selectedProduct],
+        products: [...prevPizza.products, selectedProduct]
       }));
     } else {
       setPizzaToEdit((prevPizza) => ({
         ...prevPizza,
         products: prevPizza.products.filter(
           (product) => product.id !== selectedProduct.id
-        ),
+        )
       }));
       console.log("Pizza product List: ", pizzaToEdit.products);
     }
@@ -75,7 +75,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
     const { name, value } = event.target;
     setPizzaToEdit((prevPizza) => ({
       ...prevPizza,
-      [name]: value,
+      [name]: value
     }));
   }
 
@@ -172,7 +172,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                           </Label>
                         </div>
                       ))}
-                      ;
+                      
                     </FormGroup>
                   </div>
                   <div className="col">
