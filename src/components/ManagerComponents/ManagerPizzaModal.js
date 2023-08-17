@@ -64,7 +64,6 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
           (product) => product.id !== selectedProduct.id
         )
       }));
-      console.log("Pizza product List: ", pizzaToEdit.products);
     }
   };
   const base64ToImageUrl = (base64String) => {
@@ -88,7 +87,6 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
     axios
       .post(pizzaPhotoUploadUrl, formData)
       .then((response) => {
-        console.log("Image uploaded successfully:", response.data);
       })
       .catch((error) => {
         console.error("Error uploading image:", error);
