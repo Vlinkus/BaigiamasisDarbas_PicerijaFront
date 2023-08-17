@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap");
 
 .container {
   position: relative;
@@ -11,7 +11,7 @@
 }
 
 .custom-header {
-  font-family: 'UnifrakturMaguntia', sans-serif;
+  font-family: "UnifrakturMaguntia", sans-serif;
   color: #d7ccc0;
   font-size: 1.5rem;
   font-weight: 300;
@@ -24,7 +24,4 @@
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
-  
 }
-
-

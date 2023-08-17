@@ -1,10 +1,10 @@
 import ManagerNavBar from "./ManagerNavBar";
 
-function ManagerPage(){
-return (
+function ManagerPage() {
+  return (
     <div>
-        <ManagerNavBar />    
+      <ManagerNavBar />
     </div>
-    );
+  );
 }
 export default ManagerPage;
