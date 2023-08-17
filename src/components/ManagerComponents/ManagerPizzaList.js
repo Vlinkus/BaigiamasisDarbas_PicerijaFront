@@ -84,7 +84,7 @@ function ManagerPizzaList() {
               <td>{pizza.pizzaName}</td>
               <td>
                 {pizza.pizzaPhoto && (
-                  <img
+                  <img className="managerImages"
                     src={base64ToImageUrl(pizza.pizzaPhoto)}
                     alt={pizza.pizzaName}
                   />

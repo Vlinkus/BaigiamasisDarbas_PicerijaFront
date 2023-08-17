@@ -10,37 +10,35 @@ const PersistLogin = () => {
   const { auth, persist } = useAuth();
   const logout = useLogout();
 
-  useEffect(() => {
-    let isMounted = true;
-
-    const verifyRefreshToken = async () => {
-      console.log("verifying refresh token");
-      try {
-        await refresh();
-      } catch (err) {
-        console.error(err);
-      } finally {
-        isMounted && setIsLoading(false);
-      }
-    };
-    const signOut = async () => {
-      try {
-        await logout();
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    !persist && signOut();
-    // Avoids unwanted call to verifyRefreshToken
-    !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false);
+    useEffect(() => {
+        let isMounted = true;
+        const verifyRefreshToken = async () => {
+            try {
+                await refresh();
+            }
+            catch (err) {
+                console.error(err);
+            }
+            finally {
+                isMounted && setIsLoading(false);
+            }
+        }
+        const signOut = async () => {
+            try {
+                await logout();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        !persist && signOut();
+        // Avoids unwanted call to verifyRefreshToken
+        !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false);
 
     return () => (isMounted = false);
   }, []);
 
-  useEffect(() => {
-    console.log(`isLoading: ${isLoading}`);
-    console.log(`aT: ${JSON.stringify(auth?.accessToken)}`);
-  }, [isLoading]);
+    useEffect(() => {
+    }, [isLoading])
 
   return (
     <>{!persist ? <Outlet /> : isLoading ? <p>Loading...</p> : <Outlet />}</>

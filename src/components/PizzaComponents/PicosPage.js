@@ -30,7 +30,6 @@ export default function PicosPage() {
   }, []);
 
   useEffect(() => {
-    console.log("Picos Componentas 33 Cart changed:", cart);
   }, [cart]);
 
   const base64ToImageUrl = (base64String) => {

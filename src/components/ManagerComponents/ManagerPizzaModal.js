@@ -1,8 +1,7 @@
 import axios from "axios";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Button, Label, Input, Form, FormGroup } from "reactstrap";
+import { useEffect,useState } from "react";
+import { Button,Label,Input,Form,FormGroup} from "reactstrap";
 import "./ManagerModal.css";
 import { useTranslationAndLanguageChange } from "../TranslationComponents/TranslationUtils";
 
@@ -41,7 +40,6 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
         data: pizzaToEdit
       })
       .then((response) => {
-        console.log(response);
         if (formData.has("pizzaPhoto")) {
           imageSave(response.data.id, formData);
         }
@@ -65,7 +63,6 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
           (product) => product.id !== selectedProduct.id
         )
       }));
-      console.log("Pizza product List: ", pizzaToEdit.products);
     }
   };
   const base64ToImageUrl = (base64String) => {
@@ -89,7 +86,6 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
     axios
       .post(pizzaPhotoUploadUrl, formData)
       .then((response) => {
-        console.log("Image uploaded successfully:", response.data);
       })
       .catch((error) => {
         console.error("Error uploading image:", error);
@@ -108,8 +104,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="pizzaModalLabel">
-                {t("Pizza")}{" "}
-                {pizzaToEdit.pizzaName ? `${t("Update")}` : "Pridėjimas"}
+               {pizzaToEdit.pizzaName ? t("Updating Pizza") : t("Add New Pizza")  }
               </h5>
             </div>
             <div className="modal-body">
@@ -150,7 +145,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <h4 htmlFor="pizzaSize">{t("Products")}</h4>
+                      <h4 htmlFor="pizzaProducts">{t("Products")}</h4>
                       {productsList.map((product) => (
                         <div className="form-check" key={product.id}>
                           <Input
@@ -180,12 +175,15 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
                   <div className="col">
                     <div className="current-pizza-img">
                       <h4>
-                        {pizzaToEdit
-                          ? " Picos " + pizzaToEdit.pizzaName + " paveikslėlis"
-                          : "Picos paveikslo dar nėra"}
+                          {pizzaToEdit ? (
+                              <>{pizzaToEdit.pizzaName} {t("Pizza Picture")}</>
+                            ) : (
+                              t("Pizza does not have any picture")
+                            )}
                       </h4>
                       {pizzaToEdit.pizzaPhoto && (
                         <img
+                          className="managerImages"
                           src={base64ToImageUrl(pizzaToEdit.pizzaPhoto)}
                           alt={"Picos paveikslėlis"}
                         />

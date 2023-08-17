@@ -81,13 +81,10 @@ export default function Header() {
               className="custom-select"
               style={{ width: 100 }}
               onChange={changeLanguageHandler}
+              value={lang}
             >
-              <option value="lt" selected={lang === "lt" ? true : false}>
-                Lietuvių
-              </option>
-              <option value="en" selected={lang === "en" ? true : false}>
-                English{" "}
-              </option>
+              <option value="lt">Lietuvių</option>
+              <option value="en">English</option>
             </select>
           </section>
         </div>
