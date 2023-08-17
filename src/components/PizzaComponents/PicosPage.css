@@ -160,3 +160,31 @@
 .orderModalHeader {
   background-color: rgb(103, 189, 103);
 }
+
+.order-submition-modal {
+  position: fixed !important;
+  width: 40% !important;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orderModalHeader-order {
+  width: 100%;
+  background-color: #198754 !important;
+}
+
+.orderModalTitle{
+  color: #ffffff;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderListPizzas, .orderModalButton{
+  font-size: 20px !important;
+}
+
