@@ -1,11 +1,3 @@
-## Kaip paleisti projektą su docker?
-
-↓ ↓ ↓ Sukurti image (-t for tag) ↓ ↓ ↓
-> docker build -t myapp:v1 .
-
-↓ ↓ ↓ ↓ Paleisti naują konteinerį (with volume!)
-> docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
-
 # Pizzeria - FRONT dalis
 <i>Atkreipkite dėmesį, kad projektas, kuriame tai skaitote, yra tik priekinė dalis!
 jums taip pat reikės back-end dalies. Nuoroda pateikta po šią pastabą ↓</i><br/>
@@ -17,8 +9,8 @@ jums taip pat reikės back-end dalies. Nuoroda pateikta po šią pastabą ↓</i
 
 - [**Įvadas**](#įvadas)
     - [Kūrėjai](#kūrėjai)
-- [**Puslapio paleidimas**]()
-    - [Front dalies paleidimas](##Front dalies paleidimas)
+- [**Puslapio paleidimas**](#Front-dalies-paleidimas)
+    - [**Kaip paleisti projektą su docker?**](#Kaip-paleisti-projektą-su-docker?)
 - [**Puslapio veikimas**](#serverio-veikimas)
     - [API komandos](#api-komandos)
         - [Swagger 3 - OpenAPI 3](#swagger-3---openapi-3)
@@ -34,6 +26,7 @@ jums taip pat reikės back-end dalies. Nuoroda pateikta po šią pastabą ↓</i
 Dėl <i>"Back"</i> galinės dalies galite spustelėti 
 <a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija">šią nuorodą.</a></p>
 
+
 ## Kūrėjai
 
 Šį projektą vykdė 3 dalyviai (vienas iš jų turėjo dvi paskyras😂):
@@ -41,8 +34,6 @@ Dėl <i>"Back"</i> galinės dalies galite spustelėti
 <a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=Vlinkus/BaigiamasisDarbas_Picerija" width="40%"/>
 </a>
-
-
 
 
 
@@ -76,9 +67,16 @@ npm install react-i18next i18next
 npm start
 ```
 
+## Kaip paleisti projektą su docker?
+
+↓ ↓ ↓ Sukurti image (-t for tag) ↓ ↓ ↓
+> docker build -t myapp:v1 .
+
+↓ ↓ ↓ ↓ Paleisti naują konteinerį (with volume!)
+> docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
 
 
-## API komandos
+### API komandos
 
 Projekto portas pagal nutylėjimą  nustatytas kaip 3000.
 Visose su api susijusiose nuorodose šiuose poskyriuose bus naudojamas anksčiau minėtas portas.
