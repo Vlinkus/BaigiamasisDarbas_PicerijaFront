@@ -12,8 +12,8 @@
   - [Creators](#Creators)
 - [**Launching the Page**](#Launching-the-Front-Part)
   - [**How to Run the Project with Docker?**](#How-to-Run-the-Project-with-Docker?)
-- [**Puslapio veikimas**](#serverio-veikimas)
-  - [API komandos](#api-komandos)
+- [**Page Functionality**](#Page-Functionality)
+  - [API Commands](#api-commands)
     - [Swagger 3 - OpenAPI 3](#swagger-3---openapi-3)
     - [Authentication and Authorization](#Authentication-and-Authorization)
       - [Registration](#Registration)
@@ -120,5 +120,5 @@ Login requires only two fields.
 }
 ```
 
-Upon successful authentication, you will receive the **_JWT prieigos žetoną_**(refresh token),
-the user's **_role_**  and the  **_HttpOnly atnaujinimo žetono slapuką_**(HttpOnly refresh token cookie).
+Upon successful authentication, you will receive the **_JWT refresh token_**,
+the user's **_role_**  and the  **_HttpOnly refresh token cookie_**.
