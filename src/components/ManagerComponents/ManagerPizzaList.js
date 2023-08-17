@@ -82,7 +82,11 @@ function ManagerPizzaList() {
                             <td>{pizza.pizzaName}</td>
                             <td>
                               {pizza.pizzaPhoto && (
-                                        <img src={base64ToImageUrl(pizza.pizzaPhoto)} alt={pizza.pizzaName} />
+                                        <img 
+                                          className="managerImages"
+                                          src={base64ToImageUrl(pizza.pizzaPhoto)} 
+                                          alt={pizza.pizzaName} 
+                                        />
                                     )}
                             </td>
                             <td>{pizza.pizzaPrice} €</td>

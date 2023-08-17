@@ -7,7 +7,7 @@ export default function OrderSubmittedModal ({ showModal, onClose, order }){
     return (
         <div className="order-submition-modal">
             <Modal isOpen={showModal} toggle={onClose}>
-                <ModalHeader className="orderModalHeader" ><h1>{t("Order Complete")}</h1></ModalHeader>
+                <ModalHeader className="orderModalHeader" >{t("Order Complete")}</ModalHeader>
                 <ModalBody>
                 <h2>{t("Order No")} {order.id}</h2>
                     <ul>

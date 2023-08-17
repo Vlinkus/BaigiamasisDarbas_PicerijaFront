@@ -21,7 +21,7 @@
   "TryHomePage": "...galite pabandyti grįžti į pagrindinį puslapį",
   "Ananasas": "Ananasas",
   "Mozzarella": "Mocarela",
-  "Pomidorų padažas": "Pomidorų padažas",
+  "Tomato pasta sauce": "Pomidorų padažas",
   "Mushrooms": "Grybai",
   "Bell Peppers": "Paprika",
   "Olives": "Alyvuogės",
@@ -97,6 +97,17 @@
   "Add New Pizza":"Pridėti Naują Picą",
   "Cancel":"Atšaukti",
   "Submit":"Patvirtinti",
-  "Choose New Pizza Picture":"Pasirinkite naują Picos paveikslėlį"
+  "Choose New Pizza Picture":"Pasirinkite naują Picos paveikslėlį",
+  "Pizza does not have any picture":" Picos paveikslo dar nėra",
+  "Updating Pizza": "Picos Atnaujinimas",
+  "Updating Product":" produkto atnaujinimas",
+  "New Product Addition": "Naujo produkto Pridėjimas",
+  "Ham": "Kumpis",
+  "Sausage":"Dešrelės",
+  "Parmesan":"Permezanas",
+  "Swiss Cheese": "Šveicariškas Sūris",
+  "Pickles": "Rauginti Agurkėliai",
+  "Order Pirce":"Užsakymo kaina",
+  "Updating order": "Atnaujinimas Užsakymas Nr."
 
 }

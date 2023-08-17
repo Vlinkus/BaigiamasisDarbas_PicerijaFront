@@ -61,7 +61,7 @@ function ManagerProductsList(){
                     <thead>
                         <tr>
                             <th scope="col">{t("Line Number")}</th>
-                            <th scope="col">{t("Product Name")}</th>
+                            <th scope="col">{t("Products Name")}</th>
                             <th scope="col">{t("Unit Price")}</th>
                             <th scope="col">{t("Actions")}</th>
                             {/* public Product(String productName, Pizza pizza, double productPrice) */}

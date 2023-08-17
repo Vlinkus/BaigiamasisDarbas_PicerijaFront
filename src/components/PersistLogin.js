@@ -12,9 +12,7 @@ const PersistLogin = () => {
 
     useEffect(() => {
         let isMounted = true;
-
         const verifyRefreshToken = async () => {
-            console.log('verifying refresh token')
             try {
                 await refresh();
             }
@@ -40,8 +38,6 @@ const PersistLogin = () => {
     }, [])
 
     useEffect(() => {
-        console.log(`isLoading: ${isLoading}`)
-        console.log(`aT: ${JSON.stringify(auth?.accessToken)}`)
     }, [isLoading])
 
     return (

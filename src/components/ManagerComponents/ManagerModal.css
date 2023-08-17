@@ -19,3 +19,8 @@
   .col.py-3.manager{
     background-color: white;
   }
+  
+  .managerImages {
+    max-width: 400px;
+    max-height: 400px;
+  }
