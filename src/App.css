@@ -63,6 +63,10 @@ body,
   max-width: 90vw;
   margin: 1em auto;
 }
+.p_content_space{
+  display: block;
+  min-width: 12vw;
+}
 .p_navbar_wrapper {
   justify-content: space-between;
   background-color: #333;
