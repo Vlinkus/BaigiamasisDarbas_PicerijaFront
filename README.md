@@ -66,16 +66,40 @@ npm start
 ## Paleidimas su Docker
 
 Šio projekto fronto dalis yra "*dokerizuota*", kas leidžia įdiegti (deploy) projektą į serverį.
-Įsitikinkite, kad jūsų kompiuteryje yra ***Docker*** bent 24.0.2 versijos.
 
-1. Sukurti vaizdą (image)
+Įsitikinkite, kad jūsų kompiuteryje yra ***Docker*** bent 24.0.2 versijos, *WSL 2* backend'as (Jeigu pas jus Windows'ai) ir įjungta virtualizacija.
+<a href="https://docs.docker.com/desktop/install/windows-install/">Nuorada kaip įdiegti Docker Windows platformoje</a>
+
+Turėdami visą reikalingą programinė įrangą, nuėjus terminale į projekto aplanką, ivesti komandas:
+
+1. Atsiųsti Node vaizda*
+
+```shell
+docker pull node
+```
+
+*<sub>\* Jeigu Dockeryje jau turite node vaizdą, šį žingsnį galima praleisti )</sub>*
+
+2. Sukurti vaizdą (image)
 
 ```shell
 docker build -t myapp:v1 .
 ```
 
-2. Paleisti naują konteinerį su tūriu (volume)
+3. Paleisti naują konteinerį su tūriu (volume)
 
 ```shell
-docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
+docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:/app -v /app/node_modules myapp:nodemon
 ```
+
+Štai šios ilgos komandos struktūra:
+
+| Parametras | Reikšmė |
+| --- | --- |
+| *``docker run``* | konteinerio paleidimo komanda |
+| *``--name myapp_c_nodemon``* | konteinerio pavadinimas |
+| *``-p 3000:3000``* | serverio portas 3000 - išorėje bus portu 3000 |
+| *``--rm ``* | automatiškai ištrinti konteinerį, kai išjungiame |
+| *``-v C:\...\BaigiamasisDarbas_PicerijaFront:/app``* | "Mapinam" projekto absoliutų kelią <br />*`C:\...\BaigiamasisDarbas_PicerijaFront`*<br /> į kontainerio vidinį kelią *`/app`*. <br />Tai leidžia redaguoti failus konteineryje realiu metu. |
+| *``-v /app/node_modules``* | Nurodo kelią į node modulius veikimo metu |
+| *``myapp:nodemon``* | Konteineris su pavadinimu *`myapp`* ir tag'u *`nodemon`*|
