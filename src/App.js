@@ -9,9 +9,11 @@ import PicosPage from "./components/PizzaComponents/PicosPage";
 import ManagerPage from "./components/ManagerComponents/ManagerPage";
 import ManagerLayout from "./components/ManagerLayout";
 import RequireAuth from "./components/RequireAuth";
-
+import CareerPage from "./components/ContacComponents/CareerPage";
 import PersistLogin from "./components/PersistLogin";
 import "./components/PizzaComponents/PicosPage.css";
+import WhereToFind from "./components/ContacComponents/Contacts";
+import ContentlessLayout from "./components/ContentlessLayout";
 
 export default function App() {
   return (
@@ -22,10 +24,13 @@ export default function App() {
             <Route path="v1" element={<ManagerPage />} />
           </Route>
         </Route>
+        
 
         <Route path="/" element={<Layout />}>
           {/* public routes */}
           <Route path="/" element={<Home />} />
+          <Route path="/jobs" element={<CareerPage />} />
+          <Route path="/contacts" element={<WhereToFind />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="picos" element={<PicosPage />} />

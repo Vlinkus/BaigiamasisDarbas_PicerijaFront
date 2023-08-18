@@ -133,6 +133,14 @@
   "Clicked Delete button will delete Pizza from table":" Paspaudus mygtuką IŠTRINTI pica bus ištrinta iš sąrašo.",
   "Clicked Delete button will delete Product from table":" Paspaudus mygtuką IŠTRINTI produktas bus ištrintas iš sąrašo.",
   "Clicked Delete button will delete Order from table":" Paspaudus mygtuką IŠTRINTI užsakymas bus ištrintas iš sąrašo.",
-  "In Order page you can see Order list in a table":"Užsakymų puslapyje yra visų užsakymų sąrašo lentelė"
+  "In Order page you can see Order list in a table":"Užsakymų puslapyje yra visų užsakymų sąrašo lentelė",
+  "Work Hours":"Darbo Valandos",
+  "Monday": "Pirmadienis",
+  "Tuesday":"Antradienis",
+  "Wednesday": "Trečiadienis",
+  "Thursday":"Ketvirtadienis",
+  "Friday":"Penktadienis",
+  "Saturday":"Šeštadienis",
+  "Sunday":"Sekmadienis"
   
 }

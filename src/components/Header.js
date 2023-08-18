@@ -42,7 +42,7 @@ export default function Header() {
             <Link to="/picos">
               <div className="p_nav-item">{t("Pizzas")}</div>
             </Link>
-            <Link to="/404">
+            <Link to="/contacts">
               <div className="p_nav-item">{t("Contacts")}</div>
             </Link>
             {!showLogin && ["ADMIN", "MANAGER"].includes(auth?.role) ? (
@@ -72,11 +72,6 @@ export default function Header() {
                 </Link>
               </>
             )}
-
-            <Link to="/order">
-              <div className="p_nav-item">{t("Order")}</div>
-            </Link>
-
             <select
               className="custom-select"
               style={{ width: 100 }}

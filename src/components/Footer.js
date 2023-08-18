@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className="p_footer-heading footer-2">
           <h2>{t("Contact Us")}</h2>
-          <Link to="#">{t("Jobs")}</Link>
+          <Link to="/jobs">{t("Jobs")}</Link>
           <Link to="#">{t("Support")}</Link>
           <Link to="#">{t("Sponsorships")}</Link>
         </div>
