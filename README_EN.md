@@ -1,7 +1,6 @@
 # Pizzeria - FRONT part
-
 <i>Note that the project where you are reading this is only the front-end part!
- you will also need the back-end part. Link is below this note ↓</i><br/>
+you will also need the back-end part. Link is below this note ↓</i><br/>
 <a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija">Backend</a>
 
 [**_Readme lietuviškai_**](README.md)
@@ -9,116 +8,76 @@
 # Table of Contents
 
 - [**Introduction**](#Introduction)
-  - [Creators](#Creators)
-- [**Launching the Page**](#Launching-the-Front-Part)
-  - [**How to Run the Project with Docker?**](#How-to-Run-the-Project-with-Docker?)
-- [**Page Functionality**](#Page-Functionality)
-  - [API Commands](#api-commands)
-    - [Swagger 3 - OpenAPI 3](#swagger-3---openapi-3)
-    - [Authentication and Authorization](#Authentication-and-Authorization)
-      - [Registration](#Registration)
-      - [Login](#Login)
-      - [Logout](#Logout)
-      - [Refresh Token](#Refresh-Token)
+    - [Creators](#creators)
+- [**Launching frontend server**](#launching-frontend-server)
+    - [Getting the repository](#getting-the-repository)
+    - [Launching from terminal](#launching-from-terminal)
+    - [Launching with Docker](#launching-with-docker)
 
 # Introduction
 
-<p>This final project presents the front-end part of a pizza restaurant. For the <i>"Back"</i> end part, you can click on
+<p>This remote repository represents pizza restaurant's frontend REACT server. 
+For the SPRING REST backend, you can click
 <a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija">this link.</a></p>
 
 ## Creators
 
-This project was executed by 3 participants (one of them had two accounts 😂):
+This project was done by 3 contributors(one had two accounts😂):
 
 <a href="https://github.com/Vlinkus/BaigiamasisDarbas_Picerija/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=Vlinkus/BaigiamasisDarbas_Picerija" width="40%"/>
 </a>
 
-# Launching the Front Part
+# Launching frontend server
 
-Before proceeding, make sure that you have at least **_JDK 17_** installed on your system.
+Before you continue, make sure you have at least ***Node.js v20.4***.
+
+## Getting the repository
+
+To get this repository, just got to the local folder 
+where you would like to store it and run the git clone command in your terminal:
 
 ```shell
 git clone https://github.com/Vlinkus/BaigiamasisDarbas_PicerijaFront.git
 ```
 
-There are also many other ways to download this project. On the project's GitHub repository,
-click the "code" button to access additional options.
+There are also many more methods to acquire this project.
+In the project's GitHub repository, press the "code" button for additional options.
 
-After a quick installation, you can use your code editor (Eclipse, Intellij IDEA, Visual Studio Code...).
+After a quick installation, you should be good to go with the code editor of your choice.
 
-IMPORTANT
+## Launching from terminal
 
-To make the project work in your code editor, you need to enter the following commands and execute them:
+To run the project in the code editor or from a terminal,
+go to the project folder and enter the following commands:
+
+1. Install the packages specified in the `package.json` file:
 
 ```shell
-npm i react@latest react-dom@latest
+npm install
 ```
 
-```shell
-npm install react-i18next i18next
-```
+2. Run the project after installing the packages:
 
 ```shell
 npm start
 ```
 
-## How to Run the Project with Docker?
+## Launching with Docker
 
-↓ ↓ ↓  Create an image (-t for tag) ↓ ↓ ↓
+The front-end of this project is "*dockerized*", which allows the project to be deployed on a server.
+Make sure your machine has ***Docker*** of at least *v24.0.2* version.
 
-> docker build -t myapp:v1 .
+In the folder of your project, type these commands in your terminal:
 
-↓ ↓ ↓ ↓ Run a new container (with volume!)
+1. Create an image
 
-> docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
-
-### API Commands
-
-By default, the project port is set to 3000.
-In all API-related links in these sections, the aforementioned port will be used.
-
-#### Registration
-
-Account registration is a fairly straightforward process:
-
-- This can be done on the website, but to have higher roles such as ADMIN or MANAGER, you need to use Postman or change the registered user's role in the SQL database.
-
-Postman instructions:
-
-- Set the HTTP request to POST
-- Set the address to localhost:8080/api/v1/auth/register
-- Send a JSON body, as shown in the example below:
-
-```json
-{
-  "firstname": "Vardenis",
-  "lastname": "Pavardenis",
-  "username": "vartotojoVardas",
-  "email": "kaz@kas.lt",
-  "password": "slaptazodis",
-  "role": "ADMIN"
-}
+```shell
+docker build -t myapp:v1 .
 ```
 
-It's important to note that the "role" field is not mandatory, and the sender can omit it.
-In that case, the default role for the registered user will be "USER".
+2. Run a new container with volume
 
-All possible role options: USER, MANAGER, ADMIN
-
-#### Login
-
-Login requires only two fields.
-
-- Set the HTTP request to  `POST`
-- Set the address to `localhost:8080/api/v1/auth/login`
-
-```json
-{
-  "username": "someUsername",
-  "password": "password"
-}
+```shell
+docker run --name myapp_c_nodemon -p 3000:3000 --rm -v C:\...\BaigiamasisDarbas_PicerijaFront:app/ -v /app/node_modules myapp:nodemon
 ```
-
-Upon successful authentication, you will receive the **_JWT refresh token_**,
-the user's **_role_**  and the  **_HttpOnly refresh token cookie_**.
