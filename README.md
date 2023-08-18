@@ -10,9 +10,9 @@ jums taip pat reikės back-end dalies. Nuoroda pateikta po šią pastabą ↓</i
 - [**Įvadas**](#įvadas)
     - [Kūrėjai](#kūrėjai)
 - [**Fronto paleidimas**](#fronto-paleidimas)
-    - [**Saugykla**](#saugykla)
-    - [**Paleidimas iš terminalo**](#paleidimas-iš-terminalo)
-    - [**Paleidimas su Docker**](#paleidimas-su-docker)
+    - [Saugykla](#saugykla)
+    - [Paleidimas iš terminalo](#paleidimas-iš-terminalo)
+    - [Paleidimas su Docker](#paleidimas-su-docker)
 
 # Įvadas
 
