@@ -141,6 +141,61 @@
   "Thursday":"Ketvirtadienis",
   "Friday":"Penktadienis",
   "Saturday":"Šeštadienis",
-  "Sunday":"Sekmadienis"
+  "Sunday":"Sekmadienis",
+  "JobsWelcome": "Sveiki atvykę į \"Pizzeria\" - ten, kur svajonės apie picą pildosi!",
+  "JobsWhy": "Kodėl verta dirbti pas mus?",
+  "JobsWhy1of3": "Pizzeria gamina ne tik picas. Mes siekiame savo klientams sukurti nepamirštamą įspūdį.",
+  "JobsWhy2of3": "Tikime skanaus maisto, malonaus aptarnavimo ir jaukios atmosferos.",
+  "JobsWhy3of3": "Prisijunkite prie mūsų komandos ir tapkite picerijos šeimos dalimi, kur jūsų aistra picai gali klestėti.",
+  "JobsOpenings": "Šiuo metu esančios laisvos pozicijos:",
+  "JobsResponsibilities": "Atsakomybė::",
+  "JobsQualifications": "Kvalifikacijos:",
+  
+  "JobsPizzaChef": "Picų kepėjas",
+  "JobsPizzaChefResp1of3": "Puikiai paruošti ir iškepti picas, kalcūzus ir kitus meniu gaminius.",
+  "JobsPizzaChefResp2of3": "Užtikrinti, kad maisto kokybė ir pateikimas atitiktų mūsų aukštus standartus.",
+  "JobsPizzaChefResp3of3": "Palaikyti švarią ir tvarkingą virtuvės darbo vietą.",
+  "JobsPizzaChefQual1of3": "Kulinarinis išsilavinimas arba lygiavertė patirtis būtų pliusas.",
+  "JobsPizzaChefQual2of3": "Ankstesnė picų gaminimo patirtis greitai besikeičiančioje aplinkoje būtų pliusas.",
+  "JobsPizzaChefQual3of3": "Didelis dėmesys detalėms ir kūrybiškumas kuriant picas.",
+  
+  "JobsServer": "Padavėjas/kasininkas",
+  "JobsServerResp1of3": "Pasitikti klientus su šilta šypsena ir padėti priimti užsakymus.",
+  "JobsServerResp2of3": "Tvarkyti grynųjų pinigų operacijas ir prižiūrėti tikslius kasos aparatus.",
+  "JobsServerResp3of3": "Puikiai aptarnauti klientus ir spręsti užklausas.",
+  "JobsServerQual1of3": "Vidurinės mokyklos diplomas arba lygiavertis dokumentas.",
+  "JobsServerQual2of3": "Draugiška ir bendraujanti asmenybė.",
+  "JobsServerQual3of3": "Gebėjimas atlikti kelias užduotis vienu metu ir dirbti įtemptoje aplinkoje būtų pliusas.",
+  
+  "JobsDeliveryDriver": "Pristatymo vairuotojas",
+  "JobsDeliveryDriverResp1of3": "Saugiai pristatyti picas ir kitus užsakymus į klientų vietas.",
+  "JobsDeliveryDriverResp2of3": "Užtikrinti, kad maistas būtų pristatomas laiku ir tiksliai, išlaikant jo kokybę.",
+  "JobsDeliveryDriverResp3of3": "Prižiūrėti švarią ir gerai sutvarkytą pristatymo transporto priemonę.",
+  "JobsDeliveryDriverQual1of3": "Galiojantis vairuotojo pažymėjimas ir tinkama transporto priemonė.",
+  "JobsDeliveryDriverQual2of3": "Vietovės išmanymas ir efektyvūs navigacijos įgūdžiai.",
+  "JobsDeliveryDriverQual3of3": "Malonus požiūris į klientus ir punktualumas.",
+  
+  "JobsPerks": "Privalumai prisijungus prie Pizzeria:",
+  "JobsPerk1of6": "Konkurencingas valandinis atlyginimas ir galimybė gauti arbatpinigių.",
+  "JobsPerk2of6": "Nemokamos skanios picos ir meniu gaminiai su nuolaida.",
+  "JobsPerk3of6": "Lankstus darbo grafikas, atitinkantis jūsų gyvenimo būdą.",
+  "JobsPerk4of6": "Dinamiška ir palaikanti komandinė aplinka.",
+  "JobsPerk5of6": "Galimybės augti ir tobulėti įmonėje.",
+  "JobsPerk6of6": "Darbuotojų padėkos renginiai ir komandos formavimo veikla.",
+
+  "JobsHowToApply": "Kaip kandidatuoti:",
+  "JobsHowTo1of6": "Susipažinkite su siūlomomis pareigomis ir pasirinkite jūsų interesus atitinkantį vaidmenį.",
+  "JobsHowTo2of6": "Spustelėkite pareigybės pavadinimą, kad sužinotumėte daugiau apie pareigybės atsakomybę.",
+  "JobsHowTo3of6": "Jei nekantraujate tapti picerijos komandos dalimi, spauskite mygtuką \"Taikyti dabar\".",
+  "JobsHowTo4of6": "Užpildykite internetinę paraiškos formą ir pridėkite savo gyvenimo aprašymą.",
+  "JobsHowTo5of6": "Mūsų įdarbinimo komanda peržiūrės jūsų paraišką ir susisieks su jumis, jei atitiksite reikalavimus.",
+  "JobsHowTo6of6": "Pasiruoškite įgyvendinti savo aistrą picai picerijoje!",
+
+  "JobsJoinUs": "Prisijunkite prie mūsų ir skleiskite picos džiaugsmą po gabalėlį. Pizzeria yra ne tik picerija, mes esame vieta, kur kuriami prisiminimai ir atgyja skoniai!",
+
+  "JobsLocation": "Location: ",
+  "Location1": "Vilnius, Gedimino pr. 9, 01105",
+  "Location2": "Kaunas, Laisvės al. 41, 44309",
+  "Location3": "Panevėžys, Savanorių a. 12, 35201"
   
 }
