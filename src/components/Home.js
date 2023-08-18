@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="container">
       <Link to="/picos">
-        <img src={front} alt="menuBook" />
+        <img className="menuBookImage" src={front} alt="menuBook" />
       </Link>
       <pre className="custom-header">{textContent}</pre>
     </div>
