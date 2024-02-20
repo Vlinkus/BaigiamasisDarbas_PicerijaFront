@@ -15,7 +15,7 @@ function ProductUpdateCreateModal({showModal, closeModal, product}){
         const myMethod = productToUpdate.id ? 'PUT' : 'POST';
         axios
         .request({
-            url: 'http://localhost:3000/api/product',
+            url: '/api/product',
             method: myMethod,
             data: productToUpdate
         })

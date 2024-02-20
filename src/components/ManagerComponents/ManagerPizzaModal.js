@@ -35,7 +35,7 @@ function ManagerPizzaModal({ showModal, closeModal, pizza }) {
     const method = pizzaToEdit.id ? "PUT" : "POST";
     axios
       .request({
-        url: "http://localhost:3000/api/pizza",
+        url: "/api/pizza",
         method: method,
         data: pizzaToEdit
       })

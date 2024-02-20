@@ -1,5 +1,6 @@
 import axios from "axios";
-const BASE_URL = "http://localhost:8080";
+import { BACKEND } from "../components/GlobalVariables";
+const BASE_URL = BACKEND;
 
 export default axios.create({
   baseURL: BASE_URL

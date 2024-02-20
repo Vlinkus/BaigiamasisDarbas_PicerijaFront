@@ -36,7 +36,7 @@ export default function Cart({ cart, updatePizzaCount, clearCart }) {
   const handlerPizzaOrder = () => {
     axios
       .request({
-        url: "http://localhost:3000/api/order",
+        url: "/api/order",
         method: 'POST',
         data: order,
       })
