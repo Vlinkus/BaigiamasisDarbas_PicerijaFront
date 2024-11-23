@@ -42,8 +42,8 @@ RUN npm run build
 
 # Stage 2: Deployable Image
 # Use a specific version of the official Nginx image as the base image for the deployable image
-# FROM nginxinc/nginx-unprivileged:1.24-bullseye-perl
-FROM nginx:stable-alpine-perl as deploy
+FROM nginxinc/nginx-unprivileged:1.24-bullseye-perl as deploy
+# FROM nginx:stable-alpine-perl as deploy
 
 # Expose the port that the Nginx server will listen on
 EXPOSE 8080
