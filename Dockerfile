@@ -22,6 +22,7 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to install dependencies efficiently and leverage layer caching
 COPY package*.json ./
+COPY update-proxy.sh ./
 
 RUN chmod +x update-proxy.sh && ./update-proxy.sh
 
