@@ -24,6 +24,8 @@ WORKDIR /usr/src/app
 COPY package*.json .
 COPY update_proxy.sh .
 
+RUN ls -lah
+
 RUN chmod +x update_proxy.sh && ./update_proxy.sh
 
 # Set up npm cache in a designated directory to improve caching
