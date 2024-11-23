@@ -46,6 +46,8 @@
   max-width: 250px;
   border: 1px solid #ccc;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .pizza-item img {

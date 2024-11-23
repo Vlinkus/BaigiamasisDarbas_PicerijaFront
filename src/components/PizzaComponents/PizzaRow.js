@@ -50,13 +50,16 @@ function PizzaRow({
           {t("Ingredients")}:{" "}
           {pizza.products.map((product) => t(product.productName)).join(", ")}
         </p>
-        <div className="row cart">
+      </div>
+
+      <div className="cart" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           <div className="col-3 col-sm-1 cart">
             <button className="decreasePizzaCount" onClick={handleDecrease}>
               -
             </button>
           </div>
-          <div className="col-3 col-sm-1 cart">
+          {/* style={{padding:0}} */}
+          <div className="col-3 col-sm-1 cart" >
             <input
               type="text"
               className="pizzaCountToAdd"
@@ -77,7 +80,6 @@ function PizzaRow({
             </button>
           </div>
         </div>
-      </div>
     </div>
   );
 }
