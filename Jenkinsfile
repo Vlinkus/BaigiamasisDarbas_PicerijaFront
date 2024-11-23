@@ -2,48 +2,25 @@ pipeline {
   agent any
 
   stages {
-    stage('Build Back') {
+    stage('Build') {
       steps {
         sh """
-          if docker ps -a | grep -q rimuok-back; then
-            docker stop rimuok-back || true
-            docker rm rimuok-back || true
+          if docker ps -a | grep -q pizzeria-front; then
+            docker stop pizzeria-front || true
+            docker rm pizzeria-front || true
           fi
         """
 
         sh """
-          docker build -t rimuok-back ./backend/Rimuok-lt
+          docker build -t pizzeria-front .
         """
       }
     }
 
-    stage('Build Front') {
+    stage('Deploy') {
       steps {
         sh """
-          if docker ps -a | grep -q rimuok-front; then
-            docker stop rimuok-front || true
-            docker rm rimuok-front || true
-          fi
-        """
-
-        sh """
-          docker build -t rimuok-front ./frontend/rimuok-lt
-        """
-      }
-    }
-
-    stage('Deploy Back') {
-      steps {
-        sh """
-          docker run -d --name rimuok-back -p 8083:8081 rimuok-back
-        """
-      }
-    }
-
-    stage('Deploy Front') {
-      steps {
-        sh """
-          docker run -d --name rimuok-front -p 8073:3000 rimuok-front
+          docker run -d --name pizzeria-front -p 8074:8080 pizzeria-front
         """
       }
     }
