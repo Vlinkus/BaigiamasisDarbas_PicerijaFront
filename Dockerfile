@@ -21,10 +21,10 @@ FROM node:20-alpine AS build
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to install dependencies efficiently and leverage layer caching
-COPY package*.json ./
-COPY update-proxy.sh ./
+COPY package*.json .
+COPY update_proxy.sh .
 
-RUN chmod +x update-proxy.sh && ./update-proxy.sh
+RUN chmod +x update_proxy.sh && ./update_proxy.sh
 
 # Set up npm cache in a designated directory to improve caching
 RUN --mount=type=cache,target=/usr/src/app/.npm \
@@ -41,7 +41,7 @@ RUN npm run build
 # Stage 2: Deployable Image
 # Use a specific version of the official Nginx image as the base image for the deployable image
 # FROM nginxinc/nginx-unprivileged:1.24-bullseye-perl
-FROM nginx:stable-alpine-perl
+FROM nginx:stable-alpine-perl as deploy
 
 # Expose the port that the Nginx server will listen on
 EXPOSE 8080
