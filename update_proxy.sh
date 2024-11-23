@@ -1,5 +1,5 @@
-#!/bin/bash
-
+#!/bin/sh
+set -x
 PACKAGE_JSON="package.json"
 
 if [[ -f "$PACKAGE_JSON" ]]; then

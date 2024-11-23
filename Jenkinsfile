@@ -12,7 +12,7 @@ pipeline {
         """
 
         sh """
-          docker build -t pizzeria-front .
+          docker build --no-cache -t pizzeria-front .
         """
       }
     }
