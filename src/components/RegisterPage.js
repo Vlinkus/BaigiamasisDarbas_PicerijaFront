@@ -198,11 +198,11 @@ export default function RegisterPage() {
                 display: userFocus && user && !validName ? "block" : "none"
               }}
             >
-              ❗8 to 32 characters.
+              ❗{t("Characters")}
               <br />
-              Must begin with a letter.
+              {t("letter")}
               <br />
-              Letters, numbers, underscores, hyphens allowed.
+              {t("allowed")}
             </span>
 
             {/* Firstname input section */}
@@ -234,7 +234,7 @@ export default function RegisterPage() {
                   firstname && !validFirstname && firstnameFocus ? "" : "none"
               }}
             >
-              ❗Please enter your name
+              ❗{t("Enter name")}
               <br />
             </span>
 
@@ -267,7 +267,7 @@ export default function RegisterPage() {
                   lastname && !validLastname && lastnameFocus ? "" : "none"
               }}
             >
-              ❗Please enter your last name
+              ❗{t("Enter last")}
               <br />
             </span>
 
@@ -297,7 +297,7 @@ export default function RegisterPage() {
                 display: emailFocus && email && !validEmail ? "block" : "none"
               }}
             >
-              ❗Please enter a propper email
+              ❗{t("Enter email")}
             </span>
 
             {/* Password input section */}
@@ -325,12 +325,11 @@ export default function RegisterPage() {
               id="pwdnote"
               style={{ display: pwdFocus && !validPwd ? "" : "none" }}
             >
-              ❗ 8 to 24 characters.
+              ❗ {t("Characters2")}
               <br />
-              Must include uppercase and lowercase letters, a number and a
-              special character.
+              {t("Must include")}
               <br />
-              Allowed special characters:{" "}
+              {t("Allowed special")}:{" "}
               <span aria-label="exclamation mark">!</span>{" "}
               <span aria-label="at symbol">@</span>{" "}
               <span aria-label="hashtag">#</span>{" "}
@@ -363,7 +362,7 @@ export default function RegisterPage() {
               id="confirmnote"
               style={{ display: matchFocus && !validMatch ? "" : "none" }}
             >
-              ❗ Must match the first password input field.
+              ❗ {t("Must match")}
               <br />
             </span>
 

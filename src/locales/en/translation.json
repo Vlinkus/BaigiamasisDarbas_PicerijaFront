@@ -77,7 +77,7 @@
   "All from Our Stone Oven": "All from Our Stone Oven",
   "All Organic": "All Organic",
   "All Delicious": "All Delicious",
-  "orderComplete": "Order Completed",
+  "Order Complete": "Order Completed",
   "close": "Close",
   "willBeReadyShortly": "Your order will be prepared shortly. We look forward to your arrival.",
   "Line Number": "Que.No.",
@@ -134,6 +134,15 @@
   "Clicked Delete button will delete Product from table":"Clicked Delete button will delete Product from table",
   "Clicked Delete button will delete Order from table":"Clicked Delete button will delete Order from table",
   "In Order page you can see Order list in a table":"In Order page you can see Order list in a table",
+  "Work Hours":"Work Hours",
+  "Monday": "Monday",
+  "Tuesday":"Tuesday",
+  "Wednesday": "Wednesday",
+  "Thursday":"Thursday",
+  "Friday":"Friday",
+  "Saturday":"Saturday",
+  "Sunday":"Sunday",
+
   "JobsWelcome": "Welcome to Pizzeria - Where Pizza Dreams Come True!",
   "JobsWhy": "Why Work With Us?",
   "JobsWhy1of3": "At Pizzeria, we're not just about making pizzas. We're about creating unforgettable experiences for our customers.",
@@ -142,6 +151,7 @@
   "JobsOpenings": "Current Openings:",
   "JobsResponsibilities": "Responsibilities:",
   "JobsQualifications": "Qualifications:",
+
   "JobsPizzaChef": "Pizza Chef",
   "JobsPizzaChefResp1of3": "Prepare and cook pizzas, calzones, and other menu items to perfection.",
   "JobsPizzaChefResp2of3": "Ensure food quality and presentation meet our high standards.",
@@ -149,6 +159,7 @@
   "JobsPizzaChefQual1of3": "Culinary degree or equivalent experience.",
   "JobsPizzaChefQual2of3": "Previous pizza-making experience in a fast-paced environment.",
   "JobsPizzaChefQual3of3": "Strong attention to detail and creativity in pizza creations.",
+  
   "JobsServer": "Server/Cashier",
   "JobsServerResp1of3": "Greet customers with a warm smile and assist in taking orders.",
   "JobsServerResp2of3": "Handle cash transactions and maintain accurate cash registers.",
@@ -156,6 +167,7 @@
   "JobsServerQual1of3": "High school diploma or equivalent.",
   "JobsServerQual2of3": "Friendly and outgoing personality.",
   "JobsServerQual3of3": "Ability to multitask and work in a busy environment.",
+  
   "JobsDeliveryDriver": "Delivery Driver",
   "JobsDeliveryDriverResp1of3": "Greet customers with a warm smile and assist in taking orders.",
   "JobsDeliveryDriverResp2of3": "Handle cash transactions and maintain accurate cash registers.",
@@ -163,6 +175,7 @@
   "JobsDeliveryDriverQual1of3": "High school diploma or equivalent.",
   "JobsDeliveryDriverQual2of3": "Friendly and outgoing personality.",
   "JobsDeliveryDriverQual3of3": "Ability to multitask and work in a busy environment.",
+  
   "JobsPerks": "Perks of Joining Pizzeria:",
   "JobsPerk1of6": "Competitive hourly wages and opportunities for tips.",
   "JobsPerk2of6": "Free or discounted delicious pizzas and menu items.",
@@ -170,6 +183,7 @@
   "JobsPerk4of6": "A dynamic and supportive team environment.",
   "JobsPerk5of6": "Opportunities for growth and advancement within the company.",
   "JobsPerk6of6": "Employee appreciation events and team-building activities.",
+  
   "JobsHowToApply": "How to Apply:",
   "JobsHowTo1of6": "Check out the available positions and choose the role that aligns with your interests.",
   "JobsHowTo2of6": "Click on the job title to learn more about the position's responsibilities.",
@@ -177,18 +191,22 @@
   "JobsHowTo4of6": "Complete the online application form and attach your resume.",
   "JobsHowTo5of6": "Our hiring team will review your application and reach out if you're a match.",
   "JobsHowTo6of6": "Get ready to bring your pizza passion to life at Pizzeria!",
+  
   "JobsJoinUs": "Join us in spreading pizza joy one slice at a time. At Pizzeria, we're not just a pizza parlor; we're a place where memories are made and flavors come alive!",
+  
   "JobsLocation": "Location: ",
   "Location1": "Vilnius, Gedimino pr. 9, 01105",
   "Location2": "Kaunas, Laisvės al. 41, 44309",
   "Location3": "Panevėžys, Savanorių a. 12, 35201",
-  "Work Hours":"Work Hours",
-  "Monday": "Monday",
-  "Tuesday":"Tuesday",
-  "Wednesday": "Wednesday",
-  "Thursday":"Thursday",
-  "Friday":"Friday",
-  "Saturday":"Saturday",
-  "Sunday":"Sunday"
-  
+
+  "Characters":"8 to 32 characters.",
+  "letter":"Must begin with a letter.",
+  "allowed":"Letters, numbers, underscores, hyphens allowed.",
+  "Enter name":"Please enter your name",
+  "Enter last":"Please enter your last name",
+  "Enter email":"Please enter a propper email",
+  "Characters2":"8 to 24 characters.",
+  "Must include":"Must include uppercase and lowercase letters, a number and a special character.",
+  "Allowed special":"Allowed special characters",
+  "Must match":"Must match the first password input field."
 }

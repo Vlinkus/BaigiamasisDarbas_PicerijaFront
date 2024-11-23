@@ -35,10 +35,10 @@
   "Menu": "Meniu",
   "DayPizza": "Šefas Pasirinktų",
   "Champignon": "Pievagrybiai",
-  "NoAuthorization": "Jus neturite preeigos prie šito puslapio",
+  "NoAuthorization": "Jus neturite prieigos  prie šito puslapio",
   "TryAuthorizing": "prisijunkite prie paskyros ir mėginkite savo sėkmę dar kartą!",
   "RegistrationSuccessful": "Registracija sėkminga!",
-  "NowCanLogin": "Dabar galesite prisijungti prie paskyros!",
+  "NowCanLogin": "Dabar galėsite prisijungti prie paskyros!",
 
   "loading": "Kraunasi...",
   "yourcart": "Jūsų krepšelis",
@@ -63,7 +63,7 @@
   "TermsOfService": "Paslaugų teikimo sąlygos",
   "Contact Us": "Susisiekite",
   "Jobs": "Karjera",
-  "Support": "Palaikimas",
+  "Support": "Palaikymas",
   "Sponsorships": "Sponsorships",
   "SocialMedia": "Nuorodos",
   "OrderIt": "Užsakyti",
@@ -77,7 +77,7 @@
   "All from Our Stone Oven": "Viskas Iš Mūsų Akmens Krosnies",
   "All Organic": "Viskas Ekologiška",
   "All Delicious": "Viskas Skanu",
-  "Order Complete": "Užsakymas atlikas",
+  "Order Complete": "Užsakymas atliktas",
   "close": "Uždaryti",
   "willBeReadyShortly": "Jūsų užsakymas bus greitai paruoštas. Laukiame atvykstant.",
   "Line Number": "Eil.Nr.",
@@ -113,8 +113,8 @@
   " and ": " ir ",
   "At the top of Pizza page there is button":"Picų puslapio viršuje yra mygtukas: ",
   "At the top of Products page there is button":"Produktų puslapio viršuje yra mygtukas: ",
-  "Clicked button opens new Pizza creation window. Fill all fields and Press SUBMIT. New Pizza will be created.": " Paspaudus mygtuką atidaromas naujos picos kurimo langas. Užpildžius visus laukus paspauskite IŠSAUGOTI. Užsidarius langui bus sukurta nauja pica.",
-  "Clicked button opens new Product creation window. Fill all fields and Press SUBMIT. New Product will be created.":" Paspaudus mygtuką atidaromas naujo produkto kurimo langas. Užpildžius visus laukus paspauskite IŠSAUGOTI. Užsidarius langui bus sukurtas naujas produktas.",
+  "Clicked button opens new Pizza creation window. Fill all fields and Press SUBMIT. New Pizza will be created.": " Paspaudus mygtuką atidaromas naujos picos kūrimo langas. Užpildžius visus laukus paspauskite IŠSAUGOTI. Užsidarius langui bus sukurta nauja pica.",
+  "Clicked button opens new Product creation window. Fill all fields and Press SUBMIT. New Product will be created.":" Paspaudus mygtuką atidaromas naujo produkto kūrimo langas. Užpildžius visus laukus paspauskite IŠSAUGOTI. Užsidarius langui bus sukurtas naujas produktas.",
   "Clicked Update button opens":" Paspaudus ATNAUJINTI mygtuką atidaromas ",
   "Pizza update window.": "Picos Atnaujinimo langas.",
   "Product update window.": "Produkto Atnaujinimo langas.",
@@ -142,6 +142,7 @@
   "Friday":"Penktadienis",
   "Saturday":"Šeštadienis",
   "Sunday":"Sekmadienis",
+
   "JobsWelcome": "Sveiki atvykę į \"Pizzeria\" - ten, kur svajonės apie picą pildosi!",
   "JobsWhy": "Kodėl verta dirbti pas mus?",
   "JobsWhy1of3": "Pizzeria gamina ne tik picas. Mes siekiame savo klientams sukurti nepamirštamą įspūdį.",
@@ -196,6 +197,16 @@
   "JobsLocation": "Location: ",
   "Location1": "Vilnius, Gedimino pr. 9, 01105",
   "Location2": "Kaunas, Laisvės al. 41, 44309",
-  "Location3": "Panevėžys, Savanorių a. 12, 35201"
-  
+  "Location3": "Panevėžys, Savanorių a. 12, 35201",
+
+  "Characters":"8-32 simboliai.",
+  "letter":"Turi prasidėti nuo raidės.",
+  "allowed":"Leidžiamos raidės, skaičiai, pabraukimai, brūkšneliai.",
+  "Enter name":"Įveskite savo vardą",
+  "Enter last":"Įveskite savo pavardę",
+  "Enter email":"Įveskite tinkamesnį el. pašto adresą",
+  "Characters2":"Nuo 8 iki 24 simbolių.",
+  "Must include":"Turi būti didžiosios ir mažosios raidės, skaičius ir specialusis simbolis.",
+  "Allowed special":"Leidžiami specialieji simboliai",
+  "Must match":"Turi sutapti su pirmuoju slaptažodžio įvedimo lauku."
 }
