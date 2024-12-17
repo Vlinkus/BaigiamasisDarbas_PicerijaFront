@@ -26,7 +26,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh """
-          docker run -d --name pizzeria-front -p 8074:8080 --restart=unless-stopped pizzeria-front
+          docker run -d --name pizzeria-front -p 8074:8080 --restart=always pizzeria-front
         """
       }
     }
