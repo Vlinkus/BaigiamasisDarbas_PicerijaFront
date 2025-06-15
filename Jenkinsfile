@@ -1,17 +1,22 @@
 pipeline {
   agent any
 
+  environment {
+    IMAGE = 'pizzeria-front-img'
+    CONTAINER = 'pizzeria-front'
+  }
+
   stages {
     stage('Build') {
       steps {
         sh """
-          if docker images | grep -q pizzeria-front-img; then
-              docker rmi -f pizzeria-front-img || true
+          if docker images | grep -q ${IMAGE}; then
+              docker rmi -f ${IMAGE} || true
           fi
         """
 
         sh """
-          docker build -t pizzeria-front-img .
+          docker build -t ${IMAGE} .
         """
       }
     }
@@ -19,14 +24,14 @@ pipeline {
     stage('Deploy') {
       steps {
         sh """
-          if docker ps -a | grep -q pizzeria-front; then
-            docker stop pizzeria-front || true
-            docker rm pizzeria-front || true
+          if docker ps -a | grep -q ${CONTAINER}; then
+            docker stop ${CONTAINER} || true
+            docker rm ${CONTAINER} || true
           fi
         """
 
         sh """
-          docker run -d --name pizzeria-front -p 8074:8080 --restart=always pizzeria-front-img
+          docker run -d --name ${CONTAINER} -p 8074:8080 --restart=always ${IMAGE}
         """
       }
     }
