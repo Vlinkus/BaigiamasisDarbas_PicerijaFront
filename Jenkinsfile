@@ -5,11 +5,19 @@ pipeline {
     stage('Build') {
       steps {
         sh """
-          if docker images | grep -q pizzeria-front; then
-              docker rmi -f pizzeria-front || true
+          if docker images | grep -q pizzeria-front-img; then
+              docker rmi -f pizzeria-front-img || true
           fi
         """
 
+        sh """
+          docker build -t pizzeria-front-img .
+        """
+      }
+    }
+
+    stage('Deploy') {
+      steps {
         sh """
           if docker ps -a | grep -q pizzeria-front; then
             docker stop pizzeria-front || true
@@ -18,15 +26,7 @@ pipeline {
         """
 
         sh """
-          docker build --no-cache -t pizzeria-front .
-        """
-      }
-    }
-
-    stage('Deploy') {
-      steps {
-        sh """
-          docker run -d --name pizzeria-front -p 8074:8080 --restart=always pizzeria-front
+          docker run -d --name pizzeria-front -p 8074:8080 --restart=always pizzeria-front-img
         """
       }
     }
